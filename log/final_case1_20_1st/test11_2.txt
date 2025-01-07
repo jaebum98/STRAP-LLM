@@ -1,0 +1,52 @@
+
+input = Give me the Harry Potter book from the drawer and patrol to 8101.
+1step output = ##### Decomposed Task #####
+1. Retrieve the Harry Potter book from the drawer.
+2. Patrol to 8101.
+
+##### Allocated Task #####
+- Delivery-Robot-3 : Retrieve the Harry Potter book from the drawer.
+- Delivery-Robot-3 : Patrol to 8101.
+
+##### Task Execution Plan #####
+# ['Retrieve the Harry Potter book from the drawer', 'Patrol to 8101'] #
+- Select robot name : Delivery-Robot-3
+- Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect"}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Usable item List : ['Icecream','Apple','Book','LunchBox','Bottle','Box','Water','Medicine','Bread','Cup','Egg','Mug','Potato','Tomato']
+- Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+- Start location : '8100' (1st Floor)
+- Return location : '8100' (1st Floor)
+- Visit location list : ['8100'(1st Floor), '8101'(1st Floor)]
+- Usable Process list : [Elevator usage, Delivery]
+- Extra Description
+    - Starting location is '8100'.
+
+1. Start '8100' (1st Floor)
+    # next location is '8100', so there is no need Elevator usage process as it is on the same floor.
+
+2. Location '8100'
+    # Start Delivery Process(can use)
+        - Detect the location
+        - Move the robot arm to retrieve 'Book'
+        - Fold the robot arm
+    # next location is '8101', so there is no need Elevator usage process as it is on the same floor.
+
+3. Location '8101'
+    # Start Patrol Process(can use)
+        - Go to location '8101'
+    # next location is '8100', so there is no need Elevator usage process as it is on the same floor.
+
+4. Return to '8100'
+   - Go to location '8100'
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Delivery-Robot-3"},
+        {"skill":"Detect"}, {"skill":"MoveRobotArm","item":"Book"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"8101"},
+        {"skill":"MoveTo","location":"8100"}
+    ]
+}
+runtime = 0.011207933999999975
+total_token = 5685

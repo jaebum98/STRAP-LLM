@@ -1,0 +1,4 @@
+## your rule ##
+1. The output should be in python function format of the Scenario.
+2. The skill sequence structure uses only the robot's available skill and robot's object list. Do not use skills or objects that the robot does not have
+3. Output should contain only python function.

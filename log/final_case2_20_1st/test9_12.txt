@@ -1,0 +1,12 @@
+
+input = Place the laptop on bed.
+1step output = ##### Decomposed Task #####
+1. Place the laptop on bed.
+
+##### Allocated Task #####
+- The task cannot be performed.
+
+The task cannot be performed.
+2step output = 
+runtime = 0.005361474999999949
+total_token = 3609

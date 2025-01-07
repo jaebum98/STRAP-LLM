@@ -1,0 +1,64 @@
+
+input = can you guide me to 8333?
+1step output = ##### Decomposed Task #####
+1. Guide to 8333.
+
+##### Allocated Task #####
+- Guide-Robot: Guide to 8333.
+
+##### Task Execution Plan #####
+# ['Guide to 8333'] #
+- Select robot name: Guide-Robot
+- Available Skill List: [{"skill" : "TakePicture"}, {"skill" : "MoveTo", "location" : ""}, {"skill" : "VoiceOutput", "messages" : ""}, {"skill" : "SendPicture", "address" : ""}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Movable place List: ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+- Start location: '8100' (1st Floor)
+- Return location: '8100' (1st Floor)
+- Visit location list: ['8333'(3rd Floor)]
+- Usable Process list: [Elevator usage, Guide]
+- Extra Description
+    - Starting location is fixed to '8100'.
+
+1. Start '8100' (1st Floor)
+    # next location is '8333', so there is need Elevator usage process as it is on a different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+2. SwitchFloor from 1st floor to 3rd floor
+    # Start Elevator usage Process(can use)
+        - Go to location '1floorev_front'
+        - Prepare for using the elevator
+        - Call the elevator according to the direction of movement between floors
+        - Check inside the elevator
+        - Go to location '1floorev_in'
+        - Move between elevator floors
+
+3. Location '8333'
+    # Start Guide Process(can use)
+        - Go to location '8333'
+        - Voice output: "You have arrived at 8333"
+    # next location is '8100', so there is need Elevator usage process as it is on a different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+4. SwitchFloor from 3rd floor to 1st floor
+    # Start Elevator usage Process(can use)
+        - Go to location '3floorev_front'
+        - Prepare for using the elevator
+        - Call the elevator according to the direction of movement between floors
+        - Check inside the elevator
+        - Go to location '3floorev_in'
+        - Move between elevator floors
+
+5. Return to '8100'
+   - Go to location '8100'
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Guide-Robot"},
+        {"skill":"MoveTo","location":"1floorev_front"}, {"skill":"PreparetoCallElevator","location":"1floorev_in"}, {"skill":"CallElevator","floor":"1","direction":"Up"}, {"skill":"CheckinsideElevator"}, {"skill":"MoveTo","location":"1floorev_in"}, {"skill":"MoveElevator","floor":"3"},
+        {"skill":"MoveTo","location":"8333"}, {"skill":"VoiceOutput","messages":"You have arrived at 8333"},
+        {"skill":"MoveTo","location":"3floorev_front"}, {"skill":"PreparetoCallElevator","location":"3floorev_in"}, {"skill":"CallElevator","floor":"3","direction":"Down"}, {"skill":"CheckinsideElevator"}, {"skill":"MoveTo","location":"3floorev_in"}, {"skill":"MoveElevator","floor":"1"},
+        {"skill":"MoveTo","location":"8100"}
+    ]
+}
+runtime = 0.011330622999999207
+total_token = 6941

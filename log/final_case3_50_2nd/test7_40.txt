@@ -1,0 +1,27 @@
+
+input = can you guide me to '8433'?
+1step output = ##### Decomposed Task #####
+1. Guide to '8433'.
+
+##### Allocated Task #####
+- Guide-Robot : Guide to '8433'.
+
+##### Task Execution Plan #####
+# ['Guide to 8433'] #
+- Select robot name : Guide-Robot
+- Available Skill List : [{"skill" : "TakePicture"}, {"skill" : "MoveTo", "location" : ""}, {"skill" : "VoiceOutput", "messages" : ""}, {"skill" : "SendPicture", "address" : ""}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+- Start location : '8100' (1st Floor)
+- Return location : '8100' (1st Floor)
+- Visit location list : ['8433']
+- Usable Process list : [Guide]
+- Extra Description
+    - Starting location is fixed to '8100'.
+
+1. Start '8100' (1st Floor)
+    # next location is '8433', but '8433' is not in the movable place list.
+
+- The task cannot be performed.
+2step output = 
+runtime = 0.005993292999999955
+total_token = 5136

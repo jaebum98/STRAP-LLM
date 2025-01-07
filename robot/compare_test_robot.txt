@@ -1,0 +1,184 @@
+## robot1
+    - Available Skill List : [GoToObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Pick or Put Process : Go to the object, and pick up the object. Or go to the object, put the object to other object user want.
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it. After slicing, go to the countertop and put the knife on the countertop.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot2
+    - Available Skill List : [GoToObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), SwitchOn("object_name"), SwitchOff("object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Switch Process : Go to the object and switch it on or off.
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it. After slicing, go to the countertop and put the knife on the countertop.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot3
+    - Available Skill List : [GoToObject("object_name"), BreakObject("object_name"), SwitchOn("object_name"), SwitchOff("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Switch Process : Go to the object and switch it on or off.
+        - Pick or Put Process : Go to the object, and pick up the object. Or go to the object, put the object to other object user want.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot4
+    - Available Skill List : [GoToObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), SwitchOn("object_name"), SwitchOff("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Switch Process : Go to the object and switch it on or off.
+        - Pick or Put Process : Go to the object, and pick up the object. Or go to the object, put the object to other object user want.
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it. After slicing, go to the countertop and put the knife on the countertop.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot5
+    - Available Skill List : [GoToObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), SwitchOn("object_name"), SwitchOff("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Switch Process : Go to the object and switch it on or off.
+        - Pick or Put Process : Go to the object, and pick up the object. Or go to the object, put the object to other object user want.
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it. After slicing, go to the countertop and put the knife on the countertop.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot6
+    - Available Skill List : [GoToObject("object_name"), OpenObject("object_name"), CloseObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Open or Close Process : Go to the object, and open or close object.
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it. After slicing, go to the countertop and put the knife on the countertop.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot7
+    - Available Skill List : [GoToObject("object_name"), OpenObject("object_name"), CloseObject("object_name"), BreakObject("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Open or Close Process : Go to the object, and open or close object.
+        - Pick or Put Process : Go to the object, and pick up the object. Or go to the object, put the object to other object user want.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot8
+    - Available Skill List : [GoToObject("object_name"), OpenObject("object_name"), CloseObject("object_name"), SliceObject("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Open or Close Process : Go to the object, and open or close object.
+        - Pick or Put Process : Go to the object, and pick up the object. Or go to the object, put the object to other object user want.
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it. After slicing, go to the countertop and put the knife on the countertop.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot9
+    - Available Skill List : [GoToObject("object_name"), OpenObject("object_name"), CloseObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Open or Close Process : Go to the object, and open or close object.
+        - Pick or Put Process : Go to the object, and pick up the object. Or go to the object, put the object to other object user want.
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it. After slicing, go to the countertop and put the knife on the countertop.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot10
+    - Available Skill List : [GoToObject("object_name"), OpenObject("object_name"), CloseObject("object_name"), BreakObject("object_name"), SwitchOn("object_name"), SwitchOff("object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Open or Close Process : Go to the object, and open or close object.
+        - Switch Process : Go to the object and switch it on or off.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot11
+    - Available Skill List : [GoToObject("object_name"), OpenObject("object_name"), CloseObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), SwitchOn("object_name"), SwitchOff("object_name"), DropHandObject("object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Open or Close Process : Go to the object, and open or close object.
+        - Switch Process : Go to the object and switch it on or off.
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it. After slicing, go to the countertop and put the knife on the countertop.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot12
+    - Available Skill List : [GoToObject("object_name"), OpenObject("object_name"), CloseObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), SwitchOn("object_name"), SwitchOff("object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Open or Close Process : Go to the object, and open or close object.
+        - Switch Process : Go to the object and switch it on or off.
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it.
+        - Throwing Process : Go to the object to be thrown and pick it up. Then go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot13
+    - Available Skill List : [GoToObject("object_name"), OpenObject("object_name"), CloseObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Open or Close Process : Go to the object, and open or close object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot14
+    - Available Skill List : [GoToObject("object_name"), SwitchOn("object_name"), SwitchOff("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Switch Process : Go to the object and switch it on or off.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot15
+    - Available Skill List : [GoToObject("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Pick or Put Process : Go to the object, and pick up the object. Or go to the object, put the object to other object user want.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot16
+    - Available Skill List : [GoToObject("object_name"), SliceObject("object_name"), PickupObject("object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Slicing Process : Go to Knife and pick up the knife. Then go to the object user want to slice and slice it.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## robot17
+    - Available Skill List : [GoToObject("object_name"), BreakObject("object_name"), ThrowObject("object_name", "object_name")]
+    - Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+    - Main process :
+        - Throwing Process : Go to the throwing place and when robot arrive, throw the object at that place.
+        - Break Process : Go to the object, and break the object.
+    - Extra Description
+        - Execute the user's command by combining only the main process above.
+
+## PetCare-Robot
+    - Available Skill List : [GoToObject("object_name"), PlayingWithPet("object_name"), MonitorHealth("object_name"), SaveHealthData("object_name"), Clean("object_name")]
+    - Usable object List : ['Puppy', 'Cat', 'LitterBox', 'FoodBowl', 'Server']
+    - Main process :
+        - Playing Process : Go to the pet, and play with the pet.
+        - Cleaning Process : Go to the object, and Clean the object.
+        - Health Monitoring Process : Go to the pet, and monitors the pet's health using sensors, and save health data to server.
+    - Extra Description

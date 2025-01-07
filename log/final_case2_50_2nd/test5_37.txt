@@ -1,0 +1,42 @@
+
+input = I want to take a picture, can you take a picture and send it to 010-1234-5678?
+1step output = ##### Decomposed Task #####
+1. Take a picture.
+2. Send the picture to 010-1234-5678.
+
+##### Allocated Task #####
+- Guide-Robot: Take a picture and send it to 010-1234-5678.
+
+##### Task Execution Plan #####
+# ['Take a picture and send it to 010-1234-5678'] #
+- Select robot name: Guide-Robot
+- Available Skill List: [{"skill" : "TakePicture"}, {"skill" : "MoveTo", "location" : ""}, {"skill" : "VoiceOutput", "messages" : ""}, {"skill" : "SendPicture", "address" : ""}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Movable place List: ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+- Start location: '8100' (1st Floor)
+- Return location: '8100' (1st Floor)
+- Usable Process list: [Filming]
+- Extra Description
+    - Starting location is fixed to '8100'.
+
+1. Start '8100' (1st Floor)
+    # This task does not require movement.
+
+2. Filming Process
+    # Start Filming Process(can use)
+        - Voice output: "I will take a picture in 5 seconds."
+        - Take a picture
+        - Send the picture to the phone number 010-1234-5678
+        - Voice output: "Transmission is complete."
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Guide-Robot"},
+        {"skill":"VoiceOutput","messages":"I will take a picture in 5 seconds."},
+        {"skill":"TakePicture"},
+        {"skill":"SendPicture","address":"010-1234-5678"},
+        {"skill":"VoiceOutput","messages":"Transmission is complete."}
+    ]
+}
+runtime = 0.011542634999999635
+total_token = 6383

@@ -1,0 +1,58 @@
+
+input = Give me the Harry Potter book from the drawer and patrol to 8101.
+1step output = ##### Decomposed Task #####
+1. Give me the Harry Potter book from the drawer.
+2. Patrol to 8101.
+
+##### Allocated Task #####
+- Library-Robot : Give me the Harry Potter book from the drawer.
+- Surveillance-Robot : Patrol to 8101.
+
+##### Task Execution Plan #####
+# ['Give me the Harry Potter book from the drawer.'] #
+- Select robot name : Library-Robot
+- Available Skill List : [{"skill" : "StartCollabot"}, {"skill" : "OpenDrawer", "book" : ""}, {"skill" : "CloseDrawer"}, {"skill" : "ExecuteDrawerDetector"}, {"skill" : "Reset"}]
+- Usable book List : ['Harry Potter','To Kill a Mockingbird','1984','The Great Gatsby','Pride and Prejudice','The Catcher in the Rye','Sapiens: A Brief History of Humankind','Educated','Atomic Habits','The Power of Habit','Thinking','Fast and Slow','The Selfish Gene','A Brief History of Time']
+- Main process :
+    - drawer Process : First, Start the Collabot system and open the drawer containing the target book (item). Then check to see if there are books in any open drawers and close them. Finally, reset the system to its initial state.
+
+1. Start drawer Process
+    - Start the Collabot system
+    - Open the drawer containing 'Harry Potter'
+    - Execute drawer detector to check for books in any open drawers
+    - Close the drawer
+    - Reset the system to its initial state
+
+- finish task -
+
+# ['Patrol to 8101.'] #
+- Select robot name : Surveillance-Robot
+- Available Skill List: [{"skill" : "StartSurveillance"}, {"skill" : "Patrol", "location" : ""}, {"skill" : "DetectThreat"}, {"skill" : "AlertSecurity"}, {"skill" : "ResetSystem"}, {"skill" : "ReturnStartLocation"}]
+- Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111']
+- Start location : '8100'
+- Return location : '8100'
+- Visit location list : ['8101']
+- Usable Process list : [Surveillance]
+- Extra Description:
+    - Starting location is fixed to '8100'.
+
+1. Start '8100'
+    # Start Surveillance Process(can use)
+    - Start the surveillance system
+    - Patrol to location '8101'
+    - Detect any threats
+    - Alert security if any threats are detected
+    - Return to '8100'
+    - Reset the system to its initial state
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Library-Robot"},
+        {"skill":"StartCollabot"}, {"skill":"OpenDrawer","book":"Harry Potter"}, {"skill":"ExecuteDrawerDetector"}, {"skill":"CloseDrawer"}, {"skill":"Reset"},
+        {"robot":"Surveillance-Robot"},
+        {"skill":"StartSurveillance"}, {"skill":"Patrol","location":"8101"}, {"skill":"DetectThreat"}, {"skill":"AlertSecurity"}, {"skill":"ReturnStartLocation"}, {"skill":"ResetSystem"}
+    ]
+}
+runtime = 0.011541783999999833
+total_token = 7871

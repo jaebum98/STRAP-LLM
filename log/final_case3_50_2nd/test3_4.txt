@@ -1,0 +1,12 @@
+
+input = Deliver TV to 8310.
+1step output = ##### Decomposed Task #####
+1. Deliver TV to 8310.
+
+##### Allocated Task #####
+- The task cannot be performed.
+
+The task cannot be performed.
+2step output = 
+runtime = 0.005789248999999996
+total_token = 4810

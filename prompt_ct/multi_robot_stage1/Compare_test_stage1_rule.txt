@@ -1,0 +1,7 @@
+## your rule ## 
+1. You can only use the robots described. Don't create information that doesn't exist.
+2. The skill sequence structure uses only the robot's available skill and robot's object list. Do not use skills or objects that the robot does not have.
+3. Minimize the number of robots allocated.
+4. Robots can only use the skills and items and places specified for each, and cannot use any other items or skills or places.
+5. If the task cannot be performed while planning the task execution plan, stop in the middle and answer, "The task cannot be performed.”
+6. You answer in the same format as the example scenario.

@@ -1,0 +1,90 @@
+
+input = Slice the lettuce, trash the mug and switch off the light switch
+1step output = ##### Decomposed Task #####
+1. Slice the lettuce.
+2. Trash the mug.
+3. Switch off the light switch.
+
+##### Allocated Task #####
+- Home-Service-Robot-1: Slice the lettuce.
+- Home-Service-Robot-3: Trash the mug.
+- Home-Service-Robot-2: Switch off the light switch.
+
+##### Task Execution Plan #####
+# ['Slice the lettuce.'] #
+- Select robot name: Home-Service-Robot-1
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Slice", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List: ['Apple','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Start location: Home
+- Return location: Home
+- Visit object list: ['Lettuce', 'CounterTop', 'Knife', 'CounterTop']
+- Usable Process list: [Slicing Process]
+- Extra Description:
+    - object parameter input is only object name.
+
+1. Start at Home
+    # Start Slicing Process(can use)
+        - Go to object 'Lettuce'
+        - Pickup 'Lettuce'
+        - Go to object 'CounterTop'
+        - Put 'Lettuce' on 'CounterTop'
+        - Go to object 'Knife'
+        - Pickup 'Knife'
+        - Go to object 'CounterTop'
+        - Slice 'Lettuce'
+        - Put 'Knife'
+    # Return to Home
+
+- finish task -
+
+# ['Trash the mug.'] #
+- Select robot name: Home-Service-Robot-3
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Throw", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List: ['Apple','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Start location: Home
+- Return location: Home
+- Visit object list: ['Mug', 'GarbageCan']
+- Usable Process list: [Throwing Process]
+- Extra Description:
+    - object parameter input is only object name.
+
+1. Start at Home
+    # Start Throwing Process(can use)
+        - Go to object 'Mug'
+        - Pickup 'Mug'
+        - Go to object 'GarbageCan'
+        - Throw 'Mug'
+    # Return to Home
+
+- finish task -
+
+# ['Switch off the light switch.'] #
+- Select robot name: Home-Service-Robot-2
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Open", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Wash", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "Switchon", "object" : ""}, {"skill" : "Switchoff", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List: ['Apple','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Start location: Home
+- Return location: Home
+- Visit object list: ['LightSwitch']
+- Usable Process list: [Switching Process]
+- Extra Description:
+    - object parameter input is only object name.
+
+1. Start at Home
+    # Start Switching Process(can use)
+        - Go to object 'LightSwitch'
+        - Switchoff 'LightSwitch'
+    # Return to Home
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Home-Service-Robot-1"},
+        {"skill":"GoTo","object":"Lettuce"}, {"skill":"Pickup","object":"Lettuce"}, {"skill":"GoTo","object":"CounterTop"}, {"skill":"Put","object":"Lettuce"}, {"skill":"GoTo","object":"Knife"}, {"skill":"Pickup","object":"Knife"}, {"skill":"GoTo","object":"CounterTop"}, {"skill":"Slice","object":"Lettuce"}, {"skill":"Put","object":"Knife"}, {"skill":"ReturnHome"},
+        {"robot":"Home-Service-Robot-3"},
+        {"skill":"GoTo","object":"Mug"}, {"skill":"Pickup","object":"Mug"}, {"skill":"GoTo","object":"GarbageCan"}, {"skill":"Throw","object":"Mug"}, {"skill":"ReturnHome"},
+        {"robot":"Home-Service-Robot-2"},
+        {"skill":"GoTo","object":"LightSwitch"}, {"skill":"Switchoff","object":"LightSwitch"}, {"skill":"ReturnHome"}
+    ]
+}
+runtime = 0.011945533000000008
+total_token = 9312

@@ -1,0 +1,13 @@
+
+input = Deliver TV to 8310.
+1step output = ##### Decomposed Task #####
+1. Deliver TV to 8310.
+
+##### Allocated Task #####
+- The task cannot be performed.
+
+##### Task Execution Plan #####
+- The item 'TV' is not listed in the usable item list for any of the available robots. Therefore, the task cannot be performed.
+2step output = 
+runtime = 0.005615512999999961
+total_token = 3640

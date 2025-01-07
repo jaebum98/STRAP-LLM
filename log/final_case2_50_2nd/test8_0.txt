@@ -1,0 +1,28 @@
+
+input = Can you patrol to 8222?
+1step output = ##### Decomposed Task #####
+1. Patrol to 8222.
+
+##### Allocated Task #####
+- Surveillance-Robot: Patrol to 8222.
+
+##### Task Execution Plan #####
+# ['Patrol to 8222'] #
+- Select robot name: Surveillance-Robot
+- Available Skill List: [{"skill" : "StartSurveillance"}, {"skill" : "Patrol", "location" : ""}, {"skill" : "DetectThreat"}, {"skill" : "AlertSecurity"}, {"skill" : "ResetSystem"}, {"skill" : "ReturnStartLocation"}]
+- Movable place List: ['8100', '8101', '8103', '8107', '8109', '8111']
+- Start location: '8100' (1st Floor)
+- Return location: '8100' (1st Floor)
+- Visit location list: ['8222'(2nd Floor)]
+- Usable Process list: [Surveillance]
+- Extra Description:
+    - Starting location is fixed to '8100'.
+
+1. Start '8100' (1st Floor)
+    # next location is '8222', so there is need Elevator usage process as it is on the different floor.
+    # However, the Surveillance-Robot does not have the skills required to use the elevator.
+
+The task cannot be performed.
+2step output = 
+runtime = 0.005660933999999784
+total_token = 3839

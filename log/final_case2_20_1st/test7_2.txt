@@ -1,0 +1,13 @@
+
+input = can you guide me to 8333?
+1step output = ##### Decomposed Task #####
+1. Guide to 8333.
+
+##### Allocated Task #####
+- The task cannot be performed.
+
+##### Task Execution Plan #####
+- The task cannot be performed because none of the available robots can move to location 8333.
+2step output = 
+runtime = 0.005554281000000216
+total_token = 3632

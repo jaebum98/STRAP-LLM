@@ -1,0 +1,68 @@
+
+input = Deliver tray 1 to 8109, tray 3 to 8111, tray 2 to 8101 in that order.
+1step output = ##### Decomposed Task #####
+1. Deliver tray 1 to 8109.
+2. Deliver tray 3 to 8111.
+3. Deliver tray 2 to 8101.
+
+##### Allocated Task #####
+- Delivery-Robot-1 : Deliver tray 1 to 8109.
+- Delivery-Robot-1 : Deliver tray 3 to 8111.
+- Delivery-Robot-1 : Deliver tray 2 to 8101.
+
+##### Task Execution Plan #####
+# ['Deliver tray 1 to 8109', 'Deliver tray 3 to 8111', 'Deliver tray 2 to 8101'] #
+- Select robot name : Delivery-Robot-1
+- Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect", "direction" : ""}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Usable item List : ['tray1','tray2','tray3','tray4','tray5','tray6','tray7','tray8','tray9','tray10','tray11','tray12','tray13','tray14','tray15','tray16']
+- Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+- Start location : '8100' (1st Floor)
+- Return location : '8100' (1st Floor)
+- Visit location list : ['8109'(1st Floor), '8111'(1st Floor), '8101'(1st Floor)]
+- Usable Process list : [Elevator usage, Delivery]
+- Extra Description
+    - For tray 1 to tray 8 to be delivered, you need to detect whether the 'left' direction can be delivered, and from tray 9 to tray 16, you need to detect whether the 'right' direction can be delivered.
+    - Starting location is '8100'.
+
+1. Start '8100' (1st Floor)
+    # next location is '8109', so there is no need Elevator usage process as it is on the same floor.
+
+2. Location '8109'
+    # Start Delivery Process(can use)
+        - Go to location '8109'
+        - Detect left direction of the location
+        - Move the robot arm to deliver 'tray1'
+        - Fold the robot arm
+    # next location is '8111', so there is no need Elevator usage process as it is on the same floor.
+
+3. Location '8111'
+    # Start Delivery Process(can use)
+        - Go to location '8111'
+        - Detect left direction of the location
+        - Move the robot arm to deliver 'tray3'
+        - Fold the robot arm
+    # next location is '8101', so there is no need Elevator usage process as it is on the same floor.
+
+4. Location '8101'
+    # Start Delivery Process(can use)
+        - Go to location '8101'
+        - Detect left direction of the location
+        - Move the robot arm to deliver 'tray2'
+        - Fold the robot arm
+    # next location is '8100', so there is no need Elevator usage process as it is on the same floor.
+
+5. Return to '8100'
+   - Go to location '8100'
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Delivery-Robot-1"},
+        {"skill":"MoveTo","location":"8109"}, {"skill" : "Detect", "direction" : "left"}, {"skill":"MoveRobotArm","item": "tray1"}, {"skill" : "FoldRobotArm"},
+        {"skill":"MoveTo","location":"8111"}, {"skill" : "Detect", "direction" : "left"}, {"skill":"MoveRobotArm","item": "tray3"}, {"skill" : "FoldRobotArm"},
+        {"skill":"MoveTo","location":"8101"}, {"skill" : "Detect", "direction" : "left"}, {"skill":"MoveRobotArm","item": "tray2"}, {"skill" : "FoldRobotArm"},
+        {"skill":"MoveTo","location":"8100"}
+    ]
+}
+runtime = 0.011981091
+total_token = 8479

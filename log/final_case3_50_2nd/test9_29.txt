@@ -1,0 +1,45 @@
+
+input = Place the laptop on bed.
+1step output = ##### Decomposed Task #####
+1. Place the laptop on bed.
+
+##### Allocated Task #####
+- Home-Service-Robot-3: Place the laptop on bed.
+
+##### Task Execution Plan #####
+# ['Place the laptop on bed.'] #
+- Select robot name: Home-Service-Robot-3
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Throw", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List: ['Apple','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Main Process:
+    - Throwing Process: First go to the object to be thrown, then pick it up. And then go to the object you want to throw. Then throw the object. Finally return Home.
+- Extra Description:
+    - object parameter input is only object name.
+
+1. Start at Home
+    # next action is to go to the laptop.
+
+2. Go to the laptop
+    - GoTo object 'laptop'
+
+3. Pick up the laptop
+    - Pickup object 'laptop'
+
+4. Go to the bed
+    - GoTo object 'bed'
+
+5. Place the laptop on the bed
+    - Put object 'laptop'
+
+6. Return Home
+    - ReturnHome
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Home-Service-Robot-3"},
+        {"skill":"GoTo","object":"laptop"}, {"skill":"Pickup","object":"laptop"}, {"skill":"GoTo","object":"bed"}, {"skill":"Put","object":"laptop"}, {"skill":"ReturnHome"}
+    ]
+}
+runtime = 0.011562759000000034
+total_token = 7596

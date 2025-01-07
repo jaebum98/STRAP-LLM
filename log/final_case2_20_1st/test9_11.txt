@@ -1,0 +1,6 @@
+
+input = Place the laptop on bed.
+1step output = Based on the provided information, none of the robots have the capability to place a laptop on a bed. The task cannot be performed.
+2step output = 
+runtime = 0.005484935000000135
+total_token = 3602

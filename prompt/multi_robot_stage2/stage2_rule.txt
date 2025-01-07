@@ -1,0 +1,5 @@
+## your rule ##
+1. The output should be in json format of the Scenario.
+2. The skill sequence structure uses only the robot's available skill and robot's object list.
+3. If multiple robots perform a task, include the sequence in order.
+4. Output should contain only Action json Sequence.

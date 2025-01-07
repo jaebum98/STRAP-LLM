@@ -1,0 +1,97 @@
+
+input = Can you clean 8202 and deliver Icecream to the same place?
+1step output = ##### Decomposed Task #####
+1. Clean 8202.
+2. Deliver Icecream to 8202.
+
+##### Allocated Task #####
+- Clean-Robot : Clean 8202.
+- Delivery-Robot-3 : Deliver Icecream to 8202.
+
+##### Task Execution Plan #####
+# ['Clean 8202'] #
+- Select robot name : Clean-Robot
+- Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}, {"skill" : "CleanUp"}]
+- Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+- Start location : '8200' (2nd Floor)
+- Return location : '8200' (2nd Floor)
+- Visit location list : ['8202'(2nd Floor)]
+- Usable Process list : [Elevator usage, Cleaning]
+- Extra Description
+    - Starting location is '8200'.
+
+1. Start '8200' (2nd Floor)
+    # next location is '8202', so there is no need Elevator usage process as it is on the same floor.
+
+2. Location '8202'
+    # Start Cleaning Process(can use)
+        - Go to location '8202'
+        - Clean up the location
+    # next location is '8200', so there is no need Elevator usage process as it is on the same floor.
+
+3. Return to '8200'
+   - Go to location '8200'
+
+- finish task -
+
+# ['Deliver Icecream to 8202'] #
+- Select robot name : Delivery-Robot-3
+- Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect"}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Usable item List : ['Icecream','Apple','Book','LunchBox','Bottle','Box','Water','Medicine','Bread','Cup','Egg','Mug','Potato','Tomato']
+- Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+- Start location : '8100' (1st Floor)
+- Return location : '8100' (1st Floor)
+- Visit location list : ['8202'(2nd Floor)]
+- Usable Process list : [Elevator usage, Delivery]
+- Extra Description
+    - Starting location is '8100'.
+
+1. Start '8100' (1st Floor)
+    # next location is '8202', so there is need Elevator usage process as it is on the different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+2. SwitchFloor from 1st floor to 2nd floor
+    # Start Elevator usage Process(can use)
+        - Go to location '1floorev_front'
+        - Prepare for using the elevator
+        - call the elevator according to the direction of movement between floors
+        - check inside the elevator
+        - Go to location '1floorev_in'
+        - move between elevator floors
+
+3. Location '8202'
+    # Start Delivery Process(can use)
+        - Go to location '8202'
+        - Detect the location
+        - Move the robot arm to deliver 'Icecream'
+        - Fold the robot arm
+    # next location is '8100', so there is need Elevator usage process as it is on the different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+4. SwitchFloor from 2nd floor to 1st floor
+    # Start Elevator usage Process(can use)
+        - Go to location '2floorev_front'
+        - Prepare for using the elevator
+        - call the elevator according to the direction of movement between floors
+        - check inside the elevator
+        - Go to location '2floorev_in'
+        - move between elevator floors
+
+5. Return to '8100'
+   - Go to location '8100'
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Clean-Robot"},
+        {"skill":"MoveTo","location":"8202"}, {"skill":"CleanUp"},
+        {"skill":"MoveTo","location":"8200"},
+        {"robot":"Delivery-Robot-3"},
+        {"skill":"MoveTo","location":"1floorev_front"}, {"skill":"PreparetoCallElevator","location":"1floorev_in"}, {"skill":"CallElevator","floor":"1","direction":"Up"}, {"skill":"CheckinsideElevator"}, {"skill":"MoveTo","location":"1floorev_in"}, {"skill":"MoveElevator","floor":"2"},
+        {"skill":"MoveTo","location":"8202"}, {"skill":"Detect"}, {"skill":"MoveRobotArm","item":"Icecream"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"2floorev_front"}, {"skill":"PreparetoCallElevator","location":"2floorev_in"}, {"skill":"CallElevator","floor":"2","direction":"Down"}, {"skill":"CheckinsideElevator"}, {"skill":"MoveTo","location":"2floorev_in"}, {"skill":"MoveElevator","floor":"1"},
+        {"skill":"MoveTo","location":"8100"}
+    ]
+}
+runtime = 0.035414074000000184
+total_token = 7881

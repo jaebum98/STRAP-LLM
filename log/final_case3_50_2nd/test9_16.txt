@@ -1,0 +1,45 @@
+
+input = Place the laptop on bed.
+1step output = ##### Decomposed Task #####
+1. Place the laptop on bed.
+
+##### Allocated Task #####
+- Home-Service-Robot-3: Place the laptop on bed.
+
+##### Task Execution Plan #####
+# ['Place the laptop on bed.'] #
+- Select robot name: Home-Service-Robot-3
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Throw", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List: ['Apple','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Start location: Home
+- Return location: Home
+- Visit object list: ['laptop', 'bed']
+- Usable Process list: [Placing]
+
+1. Start at Home
+    # next object is 'laptop', so there is no need for Elevator usage process as it is within the same environment.
+
+2. Go to 'laptop'
+    # Start Placing Process(can use)
+        - Go to the object 'laptop'
+        - Pick up the 'laptop'
+
+3. Go to 'bed'
+    # Continue Placing Process(can use)
+        - Go to the object 'bed'
+        - Put the 'laptop' on 'bed'
+
+4. Return to Home
+   - Return Home
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Home-Service-Robot-3"},
+        {"skill":"GoTo","object":"laptop"}, {"skill":"Pickup","object":"laptop"},
+        {"skill":"GoTo","object":"bed"}, {"skill":"Put","object":"laptop"},
+        {"skill":"ReturnHome"}
+    ]
+}
+runtime = 0.011569820999999925
+total_token = 7602

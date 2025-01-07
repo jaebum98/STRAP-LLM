@@ -1,0 +1,65 @@
+# Example Scenario 1 #
+# user input : "Put an Egg in the Fridge, and place a pot containing Apple slices into the Fridge."
+
+##### Decomposed Task #####
+1. Put an Egg in the Fridge. (Process Required: Pick or Put Process, Open or Close Process)
+2. Slice an Apple. (Process Required: Slicing Process)
+3. Put an Apple in the Pot. (Process Required: Pick or Put Process)
+4. Place the Pot with Apple Slices in the Fridge. (Process Required: Pick or Put Process, Open or Close Process)
+
+##### Allocated Task #####
+- robot1 : Put an Egg in the Fridge.
+- robot1 : Slice an Apple.
+- robot1 : Put an Apple in the Pot.
+- robot8 : Place the Pot with Apple Slices in the Fridge.
+
+##### Task Execution Plan #####
+# ['Put an Egg in the Fridge', 'Slice an Apple', 'Put an Apple in the Pot'] #
+- Select robot name : robot1
+- Available Skill List : [GoToObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+- Usable object List : ['Apple', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+- Usable Process list : [Pick or Put Process, Slicing Process, Throwing Process, Break Process]
+- Extra Description
+    - Execute the user's command by combining only the main process above.
+
+1. Put an Egg in the Fridge (can use object)
+    - Go to the Egg.
+    - Pick up the Egg.
+    - go to the Fridge.
+    - Open the Fridge.
+    - place the Egg inside the Fridge
+    - Close the Fridge.
+
+2. Slice an Apple (can use object)
+    - Go to the Knife.
+    - Pick up the Knife.
+    - Go to the Apple.
+    - Cut the Apple into slices.
+    - Go to the Diningtable.
+    - Put the Knife on the Diningtable.
+
+3. Put an Apple in the Pot (can use object)
+    - Go to the Apple slice.
+    - Pick up a slice of Apple.
+    - Go to the pot.
+    - Place the Apple slice in the pot.
+
+- finish task -
+
+# ['Place the Pot with Apple Slices in the Fridge'] #
+- Select robot name : robot8
+- Available Skill List : [GoToObject("object_name"), OpenObject("object_name"), CloseObject("object_name"), SliceObject("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+- Usable object List : ['Apple', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+- Usable Process list : [Open or Close Process, Pick or Put Process, Slicing Process, Throwing Process]
+- Extra Description
+    - Execute the user's command by combining only the main process above.
+
+    
+1. Place the Pot with Apple Slices in the Fridge (can use object)
+    - Pick up the pot.
+    - Go to the Fridge.
+    - Open the Fridge.
+    - Put the pot in the Fridge.
+    - Close the Fridge.
+
+- finish task -

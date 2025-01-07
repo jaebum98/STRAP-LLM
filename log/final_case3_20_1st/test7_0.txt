@@ -1,0 +1,13 @@
+
+input = can you guide me to 8333?
+1step output = ##### Decomposed Task #####
+1. Guide to 8333.
+
+##### Allocated Task #####
+- The task cannot be performed.
+
+##### Explanation #####
+- The Guide-Robot can only move to locations specified in its movable place list, which does not include 8333. Therefore, the task cannot be performed.
+2step output = 
+runtime = 0.005792350000000113
+total_token = 4861

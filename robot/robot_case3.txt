@@ -1,0 +1,91 @@
+## Delivery-Robot-1
+    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect", "direction" : ""}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+    - Usable item List : ['tray1','tray2','tray3','tray4','tray5','tray6','tray7','tray8','tray9','tray10','tray11','tray12','tray13','tray14','tray15','tray16']
+    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Main process :
+        - Delivery Process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, detect the location. And move the robot arm to deliver the item. And the robot arm needs to be folded. Finally, when delivery to all destinations is completed, it returns to the start location.
+		- Extra Description
+        - For tray 1 to tray 8 to be delivered, you need to detect whether the 'left' direction can be delivered, and from tray 9 to tray 16, you need to detect whether the 'right' direction can be delivered.
+				- Starting location is '8100'.
+				
+## Delivery-Robot-2
+    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "MoveRobotArm", "item" : ""}]
+    - Usable item List : ['tray1','tray2','tray3']
+    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111']
+    - Main process :
+        - Delivery Process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, move the robot arm to deliver. Finally, when delivery to all destinations is completed, it returns to the start location.
+    - Extra Description
+        - Starting location is '8100'.
+
+## Delivery-Robot-3
+    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect"}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+    - Usable item List : ['Icecream','Apple','Book','LunchBox','Bottle','Box','Water','Medicine','Bread','Cup','Egg','Mug','Potato','Tomato']
+    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Main process :
+        - Delivery Process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, detect the location. And move the robot arm to deliver the item. And the robot arm needs to be folded. Finally, when delivery to all destinations is completed, it returns to the start location.
+    - Extra Description
+		    - Starting location is '8100'.
+  
+## Clean-Robot
+    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}, {"skill" : "CleanUp"}]
+    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Main process :
+        - Cleaning process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, clean up the location.
+    - Extra Description
+        - Starting location is '8200'.
+
+## AID-Robot
+    - Available Skill List : [{"skill" : "DriveTo", "location" : ""}, {"skill" : "Spray"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Main process :
+        - Disinfection Process : First, Robot Start to starting point, and go to location. When robot arrive at location, spray disinfectant. And Come back Starting location.
+    -  Extra Description
+        - Starting location is '8100'.
+
+## Guide-Robot
+    - Available Skill List : [{"skill" : "TakePicture"}, {"skill" : "MoveTo", "location" : ""}, {"skill" : "VoiceOutput", "messages" : ""}, {"skill" : "SendPicture", "address" : ""}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Main process :
+        - Guide Process : First, move to the location entered by the user, and when robot arrive at the location, a voice output says, “You have arrived at (current location name)”, and then robot moves to home.
+        - Filming Process : This process does not require movement. First, robot outputs a voice saying, “I will take a picture in 5 seconds,” then take a picture and send the picture to the phone number entered by the user, and then outputs a voice saying, “Transmission is complete.”
+    - Extra Description
+        - Starting location is fixed to '8100'.
+
+## Surveillance-Robot
+    - Available Skill List: [{"skill" : "StartSurveillance"}, {"skill" : "Patrol", "location" : ""}, {"skill" : "DetectThreat"}, {"skill" : "AlertSecurity"}, {"skill" : "ResetSystem"}, {"skill" : "ReturnStartLocation"}]
+    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111']
+    - Surveillance Process: First, start the surveillance system and patrol a designated location. And detect any threats, and then alert security. After completing the surveillance, returns to the start location. And finally reset the system to its initial state.
+    - Extra Description:
+        - Starting location is fixed to '8100'.
+
+## Library-Robot
+    - Available Skill List : [{"skill" : "StartCollabot"}, {"skill" : "OpenDrawer", "book" : ""}, {"skill" : "CloseDrawer"}, {"skill" : "ExecuteDrawerDetector"}, {"skill" : "Reset"}]
+    - Usable book List : ['Harry Potter','To Kill a Mockingbird','1984','The Great Gatsby','Pride and Prejudice','The Catcher in the Rye','Sapiens: A Brief History of Humankind','Educated','Atomic Habits','The Power of Habit','Thinking','Fast and Slow','The Selfish Gene','A Brief History of Time']
+    - Main process :
+        - drawer Process : First, Start the Collabot system and open the drawer containing the target book (item). Then check to see if there are books in any open drawers and close them. Finally, reset the system to its initial state.
+    - Extra Description
+
+## Home-Service-Robot-1
+    - Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Slice", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "ReturnHome"}]
+    - Usable Object List : ['Apple','Book','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+    - Main Process:
+        - Slicing Process: First go to the object you want to cut, then pick it up. And go to the countertop and put it on the countertop. Next, go to where the knife is, pick it up, and go to the countertop. Then slice it and put the knife. Finally return Home.
+    - Extra Description:
+        - object parameter input is only object name.
+
+## Home-Service-Robot-2
+    - Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Open", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Wash", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "Switchon", "object" : ""}, {"skill" : "Switchoff", "object" : ""}, {"skill" : "ReturnHome"}]
+    - Usable Object List : ['Apple','Book','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+    - Main Process:
+        - Washing Process: First, move in front of the object you want to wash and pick it up. Then go to the sink and put the object down. Then turn on the faucet and wash object and turn it off. Finally, grab the object again, move it to its destination, and put it down. Finally return Home.
+        - Switching Process : Fisrt, move in front of the object you want to switch. Then Switch on or off the object.
+    - Extra Description:
+        - object parameter input is only object name.
+
+## Home-Service-Robot-3
+    - Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Throw", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "ReturnHome"}]
+    - Usable Object List : ['Apple','Book','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+    - Main Process:
+        -  Throwing Process: First go to the object to be thrown, then pick it up. And then go to the object you want to throw. Then throw the object. Finally return Home.
+    - Extra Description:
+        - object parameter input is only object name.

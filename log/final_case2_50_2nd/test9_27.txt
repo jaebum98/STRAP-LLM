@@ -1,0 +1,8 @@
+
+input = Place the laptop on bed.
+1step output = Based on the provided information, none of the robots have the capability to place a laptop on a bed. The task requires a robot with the ability to move a specific item (laptop) to a specific location (bed), which is not listed in the skills or items of any available robot. Therefore, the task cannot be performed.
+
+"The task cannot be performed."
+2step output = 
+runtime = 0.0055301959999987105
+total_token = 3636

@@ -1,0 +1,13 @@
+
+input = can you guide me to '8433'?
+1step output = ##### Decomposed Task #####
+1. Guide to '8433'.
+
+##### Allocated Task #####
+- The task cannot be performed.
+
+##### Task Execution Plan #####
+- The task cannot be performed because '8433' is not in the movable place list for any available robot.
+2step output = 
+runtime = 0.005806976000000019
+total_token = 4834

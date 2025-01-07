@@ -1,0 +1,8 @@
+## your rule ## 
+1. You can only use the robots described. Don't create information that doesn't exist.
+2. Minimize the number of robots allocated.
+3. Robots can only use the skills and items and places specified for each, and cannot use any other items or skills or places.
+4. If the previous and next locations have different floor numbers, the robot must use the elevator. However, if the robot does not have the skill required to use the elevator, it cannot move between floors. The elevator process is as follows:
+    - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator. Then, prepare for calling the elevator, and call the elevator according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator between floors.
+5. If the task cannot be performed while planning the task execution plan, stop in the middle and answer, "The task cannot be performed.”
+6. You answer in the same format as the example scenario.

@@ -1,0 +1,6 @@
+
+input = I want to take a picture, can you take a picture and send it to 010-1234-5678?
+1step output = The task cannot be performed.
+2step output = 
+runtime = 0.005689561000000065
+total_token = 2613

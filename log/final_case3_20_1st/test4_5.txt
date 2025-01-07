@@ -1,0 +1,64 @@
+
+input = Can you disinfect 8301?
+1step output = ##### Decomposed Task #####
+1. Disinfect 8301.
+
+##### Allocated Task #####
+- AID-Robot : Disinfect 8301.
+
+##### Task Execution Plan #####
+# ['Disinfect 8301'] #
+- Select robot name : AID-Robot
+- Available Skill List : [{"skill" : "DriveTo", "location" : ""}, {"skill" : "Spray"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Movable place List : [8100, 8101, 8103, 8107, 8109, 8111, 8202, 8205, 8208, 8222, 8223, 8226, 8300, 8301, 8304, 8306, 8310, 8323, 8324, 8360]
+- Start location : 8100 (1st Floor)
+- Return location : 8100 (1st Floor)
+- Visit location list : [8301(3rd Floor)]
+- Usable Process list : [Elevator usage, Disinfection]
+- Extra Description
+    - Starting location is 8100.
+
+1. Start 8100 (1st Floor)
+    # next location is '8301', so there is need Elevator usage process as it is on the different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+2. SwitchFloor from 1st floor to 3rd floor
+    # Start Elevator usage Process(can use)
+        - Go to location '1floorev_front'
+        - Prepare for using the elevator
+        - call the elevator according to the direction of movement between floors
+        - check inside the elevator
+        - Go to location '1floorev_in'
+        - move between elevator floors
+
+3. Location 8301
+    # Start Disinfection Process(can use)
+        - Drive to location '8301'
+        - Spray disinfectant
+    # next location is '8100', so there is need Elevator usage process as it is on the different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+4. SwitchFloor from 3rd floor to 1st floor
+    # Start Elevator usage Process(can use)
+        - Go to location '3floorev_front'
+        - Prepare for using the elevator
+        - call the elevator according to the direction of movement between floors
+        - check inside the elevator
+        - Go to location '3floorev_in'
+        - move between elevator floors
+
+5. Return to 8100
+   - Drive to location '8100'
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"AID-Robot"},
+        {"skill":"DriveTo","location":"1floorev_front"}, {"skill":"PreparetoCallElevator","location":"1floorev_in"}, {"skill":"CallElevator","floor":"1","direction":"Up"}, {"skill":"CheckinsideElevator"}, {"skill":"DriveTo","location":"1floorev_in"}, {"skill":"MoveElevator","floor":"3"},
+        {"skill":"DriveTo","location":8301}, {"skill":"Spray"},
+        {"skill":"DriveTo","location":"3floorev_front"}, {"skill":"PreparetoCallElevator","location":"3floorev_in"}, {"skill":"CallElevator","floor":"3","direction":"Down"}, {"skill":"CheckinsideElevator"}, {"skill":"DriveTo","location":"3floorev_in"}, {"skill":"MoveElevator","floor":"1"},
+        {"skill":"DriveTo","location":8100}
+    ]
+}
+runtime = 0.011484266000000076
+total_token = 8080
