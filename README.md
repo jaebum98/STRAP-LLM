@@ -1,4 +1,4 @@
-# Dependable and Adaptive System for Task Planning using Large Language Models
+# Modular Approach to Heterogeneous Robot Information and Efficient Framework for Multi-Robot Task Allocation using Large Language Models
 
 **Intelligent Service Robot Journal**
 
