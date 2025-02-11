@@ -1,7 +1,7 @@
 # Example Scenario 1 #
 # user input : "Put an Egg in the Fridge, and place a pot containing Apple slices into the Fridge."
 
-##### Decomposed Task #####
+##### Decomposed Command #####
 1. Put an Egg in the Fridge. (Process Required: Pick or Put Process, Open or Close Process)
 2. Slice an Apple. (Process Required: Slicing Process)
 3. Put an Apple in the Pot. (Process Required: Pick or Put Process)

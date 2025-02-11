@@ -1,7 +1,7 @@
 # Example Scenario 1 #
 # user input : "Deliver tray2 to 8222, tray1 to 8111 in that order, and deliver Apple to 8101."
 
-##### Decomposed Task #####
+##### Decomposed Command #####
 1. Deliver tray2 to 8222.
 2. Deliver tray1 to 8111.
 3. Deliver Apple to 8101.

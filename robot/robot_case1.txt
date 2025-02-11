@@ -2,9 +2,10 @@
     - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect", "direction" : ""}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
     - Usable item List : ['tray1','tray2','tray3','tray4','tray5','tray6','tray7','tray8','tray9','tray10','tray11','tray12','tray13','tray14','tray15','tray16']
     - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
-    - Main process :
+    - Main task :
         - Delivery Process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, detect the location. And move the robot arm to deliver the item. And the robot arm needs to be folded. Finally, when delivery to all destinations is completed, it returns to the start location.
-		- Extra Description
+		- Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator. Then, prepare for calling the elevator, and call the elevator according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator between floors.
+        - Extra Description
         - For tray 1 to tray 8 to be delivered, you need to detect whether the 'left' direction can be delivered, and from tray 9 to tray 16, you need to detect whether the 'right' direction can be delivered.
 				- Starting location is '8100'.
 				
@@ -12,7 +13,7 @@
     - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "MoveRobotArm", "item" : ""}]
     - Usable item List : ['tray1','tray2','tray3']
     - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111']
-    - Main process :
+    - Main task :
         - Delivery Process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, move the robot arm to deliver. Finally, when delivery to all destinations is completed, it returns to the start location.
     - Extra Description
         - Starting location is '8100'.
@@ -21,7 +22,8 @@
     - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect"}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
     - Usable item List : ['Icecream','Apple','Book','LunchBox','Bottle','Box','Water','Medicine','Bread','Cup','Egg','Mug','Potato','Tomato']
     - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
-    - Main process :
+    - Main task :
         - Delivery Process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, detect the location. And move the robot arm to deliver the item. And the robot arm needs to be folded. Finally, when delivery to all destinations is completed, it returns to the start location.
+        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator. Then, prepare for calling the elevator, and call the elevator according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator between floors.
     - Extra Description
 		    - Starting location is '8100'.

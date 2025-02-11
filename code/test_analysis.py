@@ -5,12 +5,9 @@ from pathlib import Path
 from datetime import datetime
 import time
 import sys
-sys.path.append('/home/serverpc/.local/lib/python3.8/site-packages')
-
+sys.path.append('/home/userpc/.local/lib/python3.8/site-packages')
 
 if __name__ == "__main__":
-
-## 최종 테스트용 user input ##
 
     correct_answer_1 = [
         {"Action json Sequence": [{"robot":"Delivery-Robot-1"},{"skill":"MoveTo","location":"8109"},{"skill":"Detect","direction":"left"},{"skill":"MoveRobotArm","item":"tray1"},{"skill":"FoldRobotArm"},{"skill":"MoveTo","location":"8111"},{"skill":"Detect","direction":"left"},{"skill":"MoveRobotArm","item":"tray8"},{"skill":"FoldRobotArm"},{"skill":"MoveTo","location":"1floorev_front"},{"skill":"PreparetoCallElevator","location":"1floorev_in"},{"skill":"CallElevator","floor":"1","direction":"Up"},{"skill":"CheckinsideElevator"},{"skill":"MoveTo","location":"1floorev_in"},{"skill":"MoveElevator","floor":"2"},{"skill":"MoveTo","location":"8222"},{"skill":"Detect","direction":"right"},{"skill":"MoveRobotArm","item":"tray9"},{"skill":"FoldRobotArm"},{"skill":"MoveTo","location":"8205"},{"skill":"Detect","direction":"left"},{"skill":"MoveRobotArm","item":"tray6"},{"skill":"FoldRobotArm"},{"skill":"MoveTo","location":"2floorev_front"},{"skill":"PreparetoCallElevator","location":"2floorev_in"},{"skill":"CallElevator","floor":"2","direction":"Up"},{"skill":"CheckinsideElevator"},{"skill":"MoveTo","location":"2floorev_in"},{"skill":"MoveElevator","floor":"3"},{"skill":"MoveTo","location":"8323"},{"skill":"Detect","direction":"left"},{"skill":"MoveRobotArm","item":"tray2"},{"skill":"FoldRobotArm"},{"skill":"MoveTo","location":"8304"},{"skill":"Detect","direction":"left"},{"skill":"MoveRobotArm","item":"tray3"},{"skill":"FoldRobotArm"},{"skill":"MoveTo","location":"3floorev_front"},{"skill":"PreparetoCallElevator","location":"3floorev_in"},{"skill":"CallElevator","floor":"3","direction":"Down"},{"skill":"CheckinsideElevator"},{"skill":"MoveTo","location":"3floorev_in"},{"skill":"MoveElevator","floor":"1"},{"skill":"MoveTo","location":"8101"},{"skill":"Detect","direction":"left"},{"skill":"MoveRobotArm","item":"tray5"},{"skill":"FoldRobotArm"},{"skill":"MoveTo","location":"8100"}]},
@@ -67,9 +64,9 @@ if __name__ == "__main__":
         correct_time = 0
         print("test  : " + str(i) + "\n")
         for j in range(0,20):
-            with open(f"/home/serverpc/server_backend/robot_taskmanager_llm/log/final_case3_20_1st/test{i}_{j}.txt", "r") as f:
+            with open(f"/home/userpc/server_backend/robot_taskmanager_llm/log/final_case3_20_1st/test{i}_{j}.txt", "r") as f:
                 example = f.read()
-                # "2step output = " 이후부터 "runtime"까지 자르기
+                # "2step output = "
                 start = example.find("2step output = ") + len("2step output = ")
                 end = example.find("runtime")
                 result = example[start:end].strip()
