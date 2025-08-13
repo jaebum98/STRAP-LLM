@@ -1,0 +1,143 @@
+
+input = Deliver tray 1 to Meeting Room1, tray 8 to Meeting Room3, tray 9 to Laboratory2, tray 6 to Restroom2, tray 2 to Toilet3, and tray 3 to Office , tray 5 to Meeting Room2 in that order.
+1step output = ##### DECOMPOSED COMMAND #####
+1. Deliver tray 1 to Meeting Room1.
+2. Deliver tray 8 to Meeting Room3.
+3. Deliver tray 9 to Laboratory2.
+4. Deliver tray 6 to Restroom2.
+5. Deliver tray 2 to Toilet3.
+6. Deliver tray 3 to Office.
+7. Deliver tray 5 to Meeting Room2.
+
+##### ALLOCATED TASK #####
+- Delivery-Robot-1: Deliver tray 1 to Meeting Room1.
+- Delivery-Robot-1: Deliver tray 8 to Meeting Room3.
+- Delivery-Robot-1: Deliver tray 9 to Laboratory2.
+- Delivery-Robot-1: Deliver tray 6 to Restroom2.
+- Delivery-Robot-1: Deliver tray 2 to Toilet3.
+- Delivery-Robot-1: Deliver tray 3 to Office.
+- Delivery-Robot-1: Deliver tray 5 to Meeting Room2.
+
+##### TASK EXECUTION PLAN #####
+# ['Deliver tray 1 to Meeting Room1', 'Deliver tray 8 to Meeting Room3', 'Deliver tray 9 to Laboratory2', 'Deliver tray 6 to Restroom2', 'Deliver tray 2 to Toilet3', 'Deliver tray 3 to Office', 'Deliver tray 5 to Meeting Room2'] #
+- Select robot name: Delivery-Robot-1
+- Available Skill List: [{"skill": "MoveTo", "location": ""}, {"skill": "Detect", "direction": ""}, {"skill": "MoveRobotArm", "item": ""}, {"skill": "FoldRobotArm"}, {"skill": "CallElevator", "floor": "", "direction": ""}, {"skill": "CheckinsideElevator"}, {"skill": "MoveElevator", "floor": ""}]
+- Usable item List: ['tray1','tray2','tray3','tray4','tray5','tray6','tray7','tray8','tray9','tray10','tray11','tray12','tray13','tray14','tray15','tray16']
+- Movable place List: ['Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom1', 'Restroom2', 'Restroom3', 'Toilet1', 'Toilet2', 'Toilet3', 'Office', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
+- Start location: 'Main Hall' (1st Floor)
+- Return location: 'Main Hall' (1st Floor)
+- Visit location list: ['Meeting Room1'(1st Floor), 'Meeting Room3'(1st Floor), 'Laboratory2'(2nd Floor), 'Restroom2'(2nd Floor), 'Toilet3'(3rd Floor), 'Office'(3rd Floor), 'Meeting Room2'(1st Floor)]
+- Usable Process list: [Elevator usage, Delivery]
+- Extra Description
+    - 'Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Restroom1', and 'Toilet1' are on the 1st floor, 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom2', and 'Toilet2' are on the 2nd floor, and 'Office', 'Restroom3', and 'Toilet3' are on the 3rd floor.
+    - For tray 1 to tray 8 to be delivered, you need to detect whether the 'left' direction can be delivered, and from tray 9 to tray 16, you need to detect whether the 'right' direction can be delivered.
+    - Starting location is 'Main Hall'.
+
+1. Start 'Main Hall' (1st Floor)
+    # next location is 'Meeting Room1', so there is no need for Elevator usage process as it is on the same floor.
+
+2. Location 'Meeting Room1'
+    # Start Delivery Process
+        - Go to location 'Meeting Room1'
+        - Detect left direction of the location
+        - Move the robot arm to deliver 'tray1'
+        - Fold the robot arm
+    # next location is 'Meeting Room3', so there is no need for Elevator usage process as it is on the same floor.
+
+3. Location 'Meeting Room3'
+    # Start Delivery Process
+        - Go to location 'Meeting Room3'
+        - Detect left direction of the location
+        - Move the robot arm to deliver 'tray8'
+        - Fold the robot arm
+    # next location is 'Laboratory2', so there is need for Elevator usage process as it is on a different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+4. SwitchFloor from 1st floor to 2nd floor
+    # Start Elevator usage Process
+        - Go to location '1floorev_front'
+        - call the elevator by sending the floor '1' and 'Up' for 1st to 2nd floor.
+        - check inside the elevator
+        - Go to location '1floorev_in'
+        - move elevator to floor '2'
+
+5. Location 'Laboratory2'
+    # Start Delivery Process
+        - Go to location 'Laboratory2'
+        - Detect right direction of the location
+        - Move the robot arm to deliver 'tray9'
+        - Fold the robot arm
+    # next location is 'Restroom2', so there is no need for Elevator usage process as it is on the same floor.
+
+6. Location 'Restroom2'
+    # Start Delivery Process
+        - Go to location 'Restroom2'
+        - Detect left direction of the location
+        - Move the robot arm to deliver 'tray6'
+        - Fold the robot arm
+    # next location is 'Toilet3', so there is need for Elevator usage process as it is on a different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+7. SwitchFloor from 2nd floor to 3rd floor
+    # Start Elevator usage Process
+        - Go to location '2floorev_front'
+        - call the elevator by sending the floor '2' and 'Up' for 2nd to 3rd floor.
+        - check inside the elevator
+        - Go to location '2floorev_in'
+        - move elevator to floor '3'
+
+8. Location 'Toilet3'
+    # Start Delivery Process
+        - Go to location 'Toilet3'
+        - Detect left direction of the location
+        - Move the robot arm to deliver 'tray2'
+        - Fold the robot arm
+    # next location is 'Office', so there is no need for Elevator usage process as it is on the same floor.
+
+9. Location 'Office'
+    # Start Delivery Process
+        - Go to location 'Office'
+        - Detect left direction of the location
+        - Move the robot arm to deliver 'tray3'
+        - Fold the robot arm
+    # next location is 'Meeting Room2', so there is need for Elevator usage process as it is on a different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+10. SwitchFloor from 3rd floor to 1st floor
+    # Start Elevator usage Process
+        - Go to location '3floorev_front'
+        - call the elevator by sending the floor '3' and 'Down' for 3rd to 1st floor.
+        - check inside the elevator
+        - Go to location '3floorev_in'
+        - move elevator to floor '1'
+
+11. Location 'Meeting Room2'
+    # Start Delivery Process
+        - Go to location 'Meeting Room2'
+        - Detect left direction of the location
+        - Move the robot arm to deliver 'tray5'
+        - Fold the robot arm
+    # next location is 'Main Hall', so there is no need for Elevator usage process as it is on the same floor.
+
+12. Return to 'Main Hall'
+    - Go to location 'Main Hall'
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Delivery-Robot-1"},
+        {"skill":"MoveTo","location":"Meeting Room1"}, {"skill":"Detect","direction":"left"}, {"skill":"MoveRobotArm","item":"tray1"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"Meeting Room3"}, {"skill":"Detect","direction":"left"}, {"skill":"MoveRobotArm","item":"tray8"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"1floorev_front"}, {"skill":"CallElevator","floor":"1","direction":"Up"}, {"skill":"CheckinsideElevator"}, {"skill":"MoveTo","location":"1floorev_in"}, {"skill":"MoveElevator","floor":"2"},
+        {"skill":"MoveTo","location":"Laboratory2"}, {"skill":"Detect","direction":"right"}, {"skill":"MoveRobotArm","item":"tray9"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"Restroom2"}, {"skill":"Detect","direction":"left"}, {"skill":"MoveRobotArm","item":"tray6"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"2floorev_front"}, {"skill":"CallElevator","floor":"2","direction":"Up"}, {"skill":"CheckinsideElevator"}, {"skill":"MoveTo","location":"2floorev_in"}, {"skill":"MoveElevator","floor":"3"},
+        {"skill":"MoveTo","location":"Toilet3"}, {"skill":"Detect","direction":"left"}, {"skill":"MoveRobotArm","item":"tray2"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"Office"}, {"skill":"Detect","direction":"left"}, {"skill":"MoveRobotArm","item":"tray3"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"3floorev_front"}, {"skill":"CallElevator","floor":"3","direction":"Down"}, {"skill":"CheckinsideElevator"}, {"skill":"MoveTo","location":"3floorev_in"}, {"skill":"MoveElevator","floor":"1"},
+        {"skill":"MoveTo","location":"Meeting Room2"}, {"skill":"Detect","direction":"left"}, {"skill":"MoveRobotArm","item":"tray5"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"Main Hall"}
+    ]
+}
+runtime = 0.0033429479999999845
+total_token = 9115

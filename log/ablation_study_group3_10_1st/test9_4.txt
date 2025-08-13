@@ -1,0 +1,48 @@
+
+input = Place the laptop on bed.
+1step output = ##### DECOMPOSED COMMAND #####
+1. Place the laptop on bed.
+
+##### ALLOCATED TASK #####
+- Home-Service-Robot-2 : Place the laptop on bed.
+
+##### TASK EXECUTION PLAN #####
+# ['Place the laptop on bed.'] #
+- Select robot name : Home-Service-Robot-2
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Open", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Wash", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "Switchon", "object" : ""}, {"skill" : "Switchoff", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List : ['Apple','Book','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Start location : Home
+- Return location : Home
+- Visit location list : ['laptop', 'bed']
+- Usable Process list : [Object manipulation]
+- Extra Description:
+    - object parameter input is only object name.
+
+1. Start at Home
+    # next location is 'laptop', so there is no need for Elevator usage process.
+
+2. Location 'laptop'
+    # Start Object manipulation Process
+        - Go to object 'laptop'
+        - Pickup 'laptop'
+    # next location is 'bed', so there is no need for Elevator usage process.
+
+3. Location 'bed'
+    # Start Object manipulation Process
+        - Go to object 'bed'
+        - Put 'laptop' on 'bed'
+
+4. Return to Home
+   - ReturnHome
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Home-Service-Robot-2"},
+        {"skill":"GoTo","object":"laptop"}, {"skill":"Pickup","object":"laptop"},
+        {"skill":"GoTo","object":"bed"}, {"skill":"Put","object":"laptop"},
+        {"skill":"ReturnHome"}
+    ]
+}
+runtime = 0.007741890000000029
+total_token = 9032

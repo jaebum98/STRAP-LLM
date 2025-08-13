@@ -1,0 +1,43 @@
+
+input = Place the laptop on bed.
+1step output = ##### DECOMPOSED COMMAND #####
+1. Place the laptop on bed.
+
+##### ALLOCATED TASK #####
+- Delivery-Robot-2 : Place the laptop on bed.
+
+##### TASK EXECUTION PLAN #####
+# ['Place the laptop on bed.'] #
+- Select robot name : Delivery-Robot-2
+- Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "MoveRobotArm", "item" : ""}]
+- Usable item List : ['tray1','tray2','tray3']
+- Movable place List : ['Living Room', 'Bedroom', 'Toilet', 'Dining Room', 'Laundry room', '8111']
+- Start location : 'Living Room'
+- Return location : 'Living Room'
+- Visit location list : ['Bedroom']
+- Usable Process list : [Delivery]
+- Extra Description
+    - Starting location is 'Living Room'.
+
+1. Start 'Living Room'
+    # next location is 'Bedroom', so there is no need for Elevator usage process as it is on the same floor.
+
+2. Location 'Bedroom'
+    # Start Delivery Process
+        - Go to location 'Bedroom'
+        - Move the robot arm to deliver 'laptop'
+    # next location is 'Living Room', so there is no need for Elevator usage process as it is on the same floor.
+
+3. Return to 'Living Room'
+   - Go to location 'Living Room'
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Delivery-Robot-2"},
+        {"skill":"MoveTo","location":"Bedroom"}, {"skill":"MoveRobotArm","item":"laptop"},
+        {"skill":"MoveTo","location":"Living Room"}
+    ]
+}
+runtime = 0.004425229000000086
+total_token = 7375

@@ -1,0 +1,77 @@
+
+input = Give me the Harry Potter book from the drawer and patrol to Storage Room.
+1step output = ##### DECOMPOSED COMMAND #####
+1. Give me the Harry Potter book from the drawer.
+2. Patrol to Storage Room.
+
+##### ALLOCATED TASK #####
+- Delivery-Robot-3 : Give me the Harry Potter book from the drawer.
+- Surveillance-Robot : Patrol to Storage Room.
+
+##### TASK EXECUTION PLAN #####
+# ['Give me the Harry Potter book from the drawer.'] #
+- Select robot name : Delivery-Robot-3
+- Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect"}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Usable item List : ['Icecream','Apple','Book','LunchBox','Bottle','Box','Water','Medicine','Bread','Cup','Egg','Mug','Potato','Tomato']
+- Movable place List : ['Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom1', 'Restroom2', 'Restroom3', 'Toilet1', 'Toilet2', 'Toilet3', 'Office', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
+- Start location : 'Main Hall' (1st Floor)
+- Return location : 'Main Hall' (1st Floor)
+- Visit location list : ['Main Hall'(1st Floor)]
+- Usable Process list : [Delivery]
+- Extra Description
+    - 'Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Restroom1', and 'Toilet1' are on the 1st floor, 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom2', and 'Toilet2' are on the 2nd floor, and 'Office', 'Restroom3', and 'Toilet3' are on the 3rd floor.
+	- Starting location is 'Main Hall'.
+
+1. Start 'Main Hall' (1st Floor)
+    # next location is 'Main Hall', so there is no need Elevator usage process as it is on the same floor.
+
+2. Location 'Main Hall'
+    # Start Delivery Process
+        - Detect the location
+        - Move the robot arm to deliver 'Book'
+        - Fold the robot arm
+    # next location is 'Main Hall', so there is no need Elevator usage process as it is on the same floor.
+
+3. Return to 'Main Hall'
+   - Go to location 'Main Hall'
+
+- finish task -
+
+# ['Patrol to Storage Room.'] #
+- Select robot name : Surveillance-Robot
+- Available Skill List: [{"skill" : "StartSurveillance"}, {"skill" : "Patrol", "location" : ""}, {"skill" : "DetectThreat"}, {"skill" : "AlertSecurity"}, {"skill" : "ResetSystem"}, {"skill" : "ReturnStartLocation"}]
+- Movable place List : ['Main Entrance', 'Server Room', 'Control Room', 'Storage Room', 'Office', 'Boiler Room']
+- Start location : 'Main Entrance'
+- Return location : 'Main Entrance'
+- Visit location list : ['Storage Room']
+- Usable Process list : [Surveillance]
+- Extra Description:
+    - Starting location is fixed to 'Main Entrance'.
+
+1. Start 'Main Entrance'
+    # Start Surveillance Process
+        - Start the surveillance system
+
+2. Location 'Storage Room'
+    # Patrol to location 'Storage Room'
+    # Detect any threats
+    # Alert security if any threats are detected
+
+3. Return to 'Main Entrance'
+    # Return to the start location
+    # Reset the system to its initial state
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Delivery-Robot-3"},
+        {"skill":"Detect"}, {"skill":"MoveRobotArm","item":"Book"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"Main Hall"},
+        {"robot":"Surveillance-Robot"},
+        {"skill":"StartSurveillance"},
+        {"skill":"Patrol","location":"Storage Room"}, {"skill":"DetectThreat"}, {"skill":"AlertSecurity"},
+        {"skill":"ReturnStartLocation"}, {"skill":"ResetSystem"}
+    ]
+}
+runtime = 0.005408862000000014
+total_token = 8568

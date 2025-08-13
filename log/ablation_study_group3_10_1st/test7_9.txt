@@ -1,0 +1,32 @@
+
+input = Can you guide me to Classroom?
+1step output = ##### DECOMPOSED COMMAND #####
+1. Guide to Classroom.
+
+##### ALLOCATED TASK #####
+- Guide-Robot : Guide to Classroom.
+
+##### TASK EXECUTION PLAN #####
+# ['Guide to Classroom'] #
+- Select robot name : Guide-Robot
+- Available Skill List : [{"skill" : "TakePicture"}, {"skill" : "MoveTo", "location" : ""}, {"skill" : "VoiceOutput", "messages" : ""}, {"skill" : "SendPicture", "address" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Movable place List : ['Main Entrance', 'Lobby', 'Information Desk', 'Conference Room', 'Exhibition Hall', 'Auditorium', 'Waiting Area', 'Library', 'Laboratory', 'Lecture Hall', 'Restroom', 'Cafeteria', 'Office', 'Break Room', 'Server Room', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
+- Start location : 'Information Desk' (1st Floor)
+- Return location : 'Information Desk' (1st Floor)
+- Visit location list : ['Classroom']
+- Usable Process list : [Guide, Elevator usage]
+- Extra Description
+    - 'Main Entrance', 'Lobby', 'Information Desk', 'Waiting Area', 'Restroom', and 'Cafeteria' are on the 1st floor, 'Conference Room', 'Exhibition Hall', 'Auditorium', 'Break Room', and 'Lecture Hall' are on the 2nd floor, and 'Library', 'Laboratory', 'Office', and 'Server Room' are on the 3rd floor.
+    - Starting location is fixed to 'Information Desk'.
+
+1. Start 'Information Desk' (1st Floor)
+    # next location is 'Classroom', which is not in the movable place list.
+
+2. Unable to proceed with the task as 'Classroom' is not a recognized location.
+
+- finish task -
+2step output = {
+    "Action json Sequence": []
+}
+runtime = 0.005057896000000006
+total_token = 8884

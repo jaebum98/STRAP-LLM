@@ -1,0 +1,77 @@
+
+input = Give me the Harry Potter book from the drawer and patrol to Storage Room.
+1step output = ##### DECOMPOSED COMMAND #####
+1. Give me the Harry Potter book from the drawer.
+2. Patrol to Storage Room.
+
+##### ALLOCATED TASK #####
+- Library-Robot : Give me the Harry Potter book from the drawer.
+- Surveillance-Robot : Patrol to Storage Room.
+
+##### TASK EXECUTION PLAN #####
+# ['Give me the Harry Potter book from the drawer.'] #
+- Select robot name : Library-Robot
+- Available Skill List : [{"skill" : "StartCollabot"}, {"skill" : "OpenDrawer", "book" : ""}, {"skill" : "CloseDrawer"}, {"skill" : "ExecuteDrawerDetector"}, {"skill" : "Reset"}]
+- Usable book List : ['Harry Potter','To Kill a Mockingbird','1984','The Great Gatsby','Pride and Prejudice','The Catcher in the Rye','Sapiens: A Brief History of Humankind','Educated','Atomic Habits','The Power of Habit','Thinking','Fast and Slow','The Selfish Gene','A Brief History of Time']
+
+1. Start the Collabot system
+    - Use skill: StartCollabot
+
+2. Open the drawer containing the 'Harry Potter' book
+    - Use skill: OpenDrawer, book: 'Harry Potter'
+
+3. Check to see if there are books in any open drawers
+    - Use skill: ExecuteDrawerDetector
+
+4. Close the drawer
+    - Use skill: CloseDrawer
+
+5. Reset the system to its initial state
+    - Use skill: Reset
+
+- finish task -
+
+# ['Patrol to Storage Room.'] #
+- Select robot name : Surveillance-Robot
+- Available Skill List: [{"skill" : "StartSurveillance"}, {"skill" : "Patrol", "location" : ""}, {"skill" : "DetectThreat"}, {"skill" : "AlertSecurity"}, {"skill" : "ResetSystem"}, {"skill" : "ReturnStartLocation"}]
+- Movable place List : ['Main Entrance', 'Server Room', 'Control Room', 'Storage Room', 'Office', 'Boiler Room']
+- Start location : 'Main Entrance'
+
+1. Start the surveillance system
+    - Use skill: StartSurveillance
+
+2. Patrol to 'Storage Room'
+    - Use skill: Patrol, location: 'Storage Room'
+
+3. Detect any threats
+    - Use skill: DetectThreat
+
+4. Alert security if any threats are detected
+    - Use skill: AlertSecurity
+
+5. Return to the start location 'Main Entrance'
+    - Use skill: ReturnStartLocation
+
+6. Reset the system to its initial state
+    - Use skill: ResetSystem
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Library-Robot"},
+        {"skill":"StartCollabot"},
+        {"skill":"OpenDrawer","book":"Harry Potter"},
+        {"skill":"ExecuteDrawerDetector"},
+        {"skill":"CloseDrawer"},
+        {"skill":"Reset"},
+        {"robot":"Surveillance-Robot"},
+        {"skill":"StartSurveillance"},
+        {"skill":"Patrol","location":"Storage Room"},
+        {"skill":"DetectThreat"},
+        {"skill":"AlertSecurity"},
+        {"skill":"ReturnStartLocation"},
+        {"skill":"ResetSystem"}
+    ]
+}
+runtime = 0.008890925999999966
+total_token = 9167

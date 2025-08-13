@@ -1,0 +1,45 @@
+
+input = Put apple in fridge and switch off the light
+1step output = ##### Decomposed Command #####
+1. Play with the puppy. (Process Required: Playing Process)
+2. Check the puppy's health. (Process Required: Health Monitoring Process)
+
+##### Allocated Task #####
+- PetCare-Robot : Play with the puppy.
+- PetCare-Robot : Check the puppy's health.
+
+##### Task Execution Plan #####
+# ['Play with the puppy', 'Check the puppy's health'] #
+- Select robot name : PetCare-Robot
+- Available Skill List : [GoToObject("object_name"), PlayingWithPet("object_name"), MonitorHealth("object_name"), SaveHealthData(), Clean("object_name")]
+- Usable object List : ['Puppy', 'Cat', 'LitterBox', 'FoodBowl']
+- Usable Process list : [Playing Process, Cleaning Process, Health Monitoring Process]
+- Extra Description
+    - Execute the user's command by combining only the main process above.
+
+1. Play with the puppy (can use object)
+    - Go to the puppy.
+    - Play with the puppy.
+
+2. Check the puppy's health (can use object)
+    - Go to the puppy.
+    - Monitor the puppy's health using sensors.
+    - Save the health data to the server.
+
+- finish task -
+2step output = ```python
+def play_with_puppy(robot_name):
+    GoToObject('Puppy')
+    PlayingWithPet('Puppy')
+
+def check_puppy_health(robot_name):
+    GoToObject('Puppy')
+    MonitorHealth('Puppy')
+    SaveHealthData()
+
+# Task execution
+play_with_puppy('PetCare-Robot')
+check_puppy_health('PetCare-Robot')
+```
+runtime = 6.203842401504517
+total_token = 9941

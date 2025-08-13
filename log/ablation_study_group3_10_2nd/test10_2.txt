@@ -1,0 +1,78 @@
+
+input = Slice the lettuce, trash the mug and switch off the light switch
+1step output = ##### DECOMPOSED COMMAND #####
+1. Slice the lettuce.
+2. Trash the mug.
+3. Switch off the light switch.
+
+##### ALLOCATED TASK #####
+- Home-Service-Robot-1 : Slice the lettuce.
+- Home-Service-Robot-3 : Trash the mug.
+- Home-Service-Robot-2 : Switch off the light switch.
+
+##### TASK EXECUTION PLAN #####
+# ['Slice the lettuce.'] #
+- Select robot name : Home-Service-Robot-1
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Slice", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List : ['Apple','Book','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Start location : Home
+- Return location : Home
+
+1. Start at Home
+    # Start Slicing Process
+    - Go to the object 'Lettuce'
+    - Pickup the object 'Lettuce'
+    - Go to the object 'CounterTop'
+    - Put the object 'Lettuce' on 'CounterTop'
+    - Go to the object 'Knife'
+    - Pickup the object 'Knife'
+    - Go to the object 'CounterTop'
+    - Slice the object 'Lettuce'
+    - Put the object 'Knife'
+    - Return Home
+
+- finish task -
+
+# ['Trash the mug.'] #
+- Select robot name : Home-Service-Robot-3
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Throw", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List : ['Apple','Book','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Start location : Home
+- Return location : Home
+
+1. Start at Home
+    # Start Throwing Process
+    - Go to the object 'Mug'
+    - Pickup the object 'Mug'
+    - Go to the object 'GarbageCan'
+    - Throw the object 'Mug'
+    - Return Home
+
+- finish task -
+
+# ['Switch off the light switch.'] #
+- Select robot name : Home-Service-Robot-2
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Open", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Wash", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "Switchon", "object" : ""}, {"skill" : "Switchoff", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List : ['Apple','Book','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Start location : Home
+- Return location : Home
+
+1. Start at Home
+    # Start Switching Process
+    - Go to the object 'LightSwitch'
+    - Switchoff the object 'LightSwitch'
+    - Return Home
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Home-Service-Robot-1"},
+        {"skill":"GoTo","object":"Lettuce"}, {"skill":"Pickup","object":"Lettuce"}, {"skill":"GoTo","object":"CounterTop"}, {"skill":"Put","object":"Lettuce"}, {"skill":"GoTo","object":"Knife"}, {"skill":"Pickup","object":"Knife"}, {"skill":"GoTo","object":"CounterTop"}, {"skill":"Slice","object":"Lettuce"}, {"skill":"Put","object":"Knife"}, {"skill":"ReturnHome"},
+        {"robot":"Home-Service-Robot-3"},
+        {"skill":"GoTo","object":"Mug"}, {"skill":"Pickup","object":"Mug"}, {"skill":"GoTo","object":"GarbageCan"}, {"skill":"Throw","object":"Mug"}, {"skill":"ReturnHome"},
+        {"robot":"Home-Service-Robot-2"},
+        {"skill":"GoTo","object":"LightSwitch"}, {"skill":"Switchoff","object":"LightSwitch"}, {"skill":"ReturnHome"}
+    ]
+}
+runtime = 0.004964120999999988
+total_token = 10426

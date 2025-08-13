@@ -1,65 +1,70 @@
 ## Delivery-Robot-1
-    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect", "direction" : ""}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect", "direction" : ""}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
     - Usable item List : ['tray1','tray2','tray3','tray4','tray5','tray6','tray7','tray8','tray9','tray10','tray11','tray12','tray13','tray14','tray15','tray16']
-    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Movable place List : ['Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom1', 'Restroom2', 'Restroom3', 'Toilet1', 'Toilet2', 'Toilet3', 'Office', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
     - Main task :
         - Delivery Process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, detect the location. And move the robot arm to deliver the item. And the robot arm needs to be folded. Finally, when delivery to all destinations is completed, it returns to the start location.
-		- Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator. Then, prepare for calling the elevator, and call the elevator according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator between floors.
-        - Extra Description
+        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator on your current floor. Then, call the elevator by sending the current floor and 'Up' or 'Down' information according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator to the desired floor.
+    - Extra Description
+        - 'Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Restroom1', and 'Toilet1' are on the 1st floor, 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom2', and 'Toilet2' are on the 2nd floor, and 'Office', 'Restroom3', and 'Toilet3' are on the 3rd floor.
         - For tray 1 to tray 8 to be delivered, you need to detect whether the 'left' direction can be delivered, and from tray 9 to tray 16, you need to detect whether the 'right' direction can be delivered.
-				- Starting location is '8100'.
+    	- Starting location is 'Main Hall'.
 				
 ## Delivery-Robot-2
     - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "MoveRobotArm", "item" : ""}]
     - Usable item List : ['tray1','tray2','tray3']
-    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111']
+    - Movable place List : ['Living Room', 'Bedroom', 'Toilet', 'Dining Room', 'Laundry room', '8111']
     - Main task :
         - Delivery Process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, move the robot arm to deliver. Finally, when delivery to all destinations is completed, it returns to the start location.
     - Extra Description
-        - Starting location is '8100'.
+        - Starting location is 'Living Room'.
 
 ## Delivery-Robot-3
-    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect"}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect"}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
     - Usable item List : ['Icecream','Apple','Book','LunchBox','Bottle','Box','Water','Medicine','Bread','Cup','Egg','Mug','Potato','Tomato']
-    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Movable place List : ['Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom1', 'Restroom2', 'Restroom3', 'Toilet1', 'Toilet2', 'Toilet3', 'Office', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
     - Main task :
         - Delivery Process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, detect the location. And move the robot arm to deliver the item. And the robot arm needs to be folded. Finally, when delivery to all destinations is completed, it returns to the start location.
-        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator. Then, prepare for calling the elevator, and call the elevator according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator between floors.
+        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator on your current floor. Then, call the elevator by sending the current floor and 'Up' or 'Down' information according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator to the desired floor.
     - Extra Description
-		    - Starting location is '8100'.
+        - 'Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Restroom1', and 'Toilet1' are on the 1st floor, 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom2', and 'Toilet2' are on the 2nd floor, and 'Office', 'Restroom3', and 'Toilet3' are on the 3rd floor.
+		- Starting location is 'Main Hall'.
   
 ## Clean-Robot
-    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}, {"skill" : "CleanUp"}]
-    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}, {"skill" : "CleanUp"}]
+    - Movable place List : ['Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Storage Room', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom1', 'Restroom2', 'Restroom3', 'Toilet1', 'Toilet2', 'Toilet3', 'Office', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
     - Main task :
         - Cleaning process : Robot Start to starting point, and move to visit location in order. And when robot arrive at each location, clean up the location.
-        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator. Then, prepare for calling the elevator, and call the elevator according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator between floors.
+        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator on your current floor. Then, call the elevator by sending the current floor and 'Up' or 'Down' information according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator to the desired floor.
     - Extra Description
-        - Starting location is '8200'.
+        - 'Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Restroom1', and 'Toilet1' are on the 1st floor, 'Storage Room', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom2', and 'Toilet2' are on the 2nd floor, and 'Office', 'Restroom3', and 'Toilet3' are on the 3rd floor.
+        - Starting location is 'Storage Room'.
 
 ## AID-Robot
-    - Available Skill List : [{"skill" : "DriveTo", "location" : ""}, {"skill" : "Spray"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
-    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Available Skill List : [{"skill" : "DriveTo", "location" : ""}, {"skill" : "Spray"}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+    - Movable place List : ['Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom1', 'Restroom2', 'Restroom3', 'Toilet1', 'Toilet2', 'Toilet3', 'Office', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
     - Main task :
         - Disinfection Process : First, Robot Start to starting point, and go to location. When robot arrive at location, spray disinfectant. And Come back Starting location.
-        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator. Then, prepare for calling the elevator, and call the elevator according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator between floors.
+        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator on your current floor. Then, call the elevator by sending the current floor and 'Up' or 'Down' information according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator to the desired floor.
     -  Extra Description
-        - Starting location is '8100'.
+        - 'Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Restroom1', and 'Toilet1' are on the 1st floor, 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom2', and 'Toilet2' are on the 2nd floor, and 'Office', 'Restroom3', and 'Toilet3' are on the 3rd floor.
+        - Starting location is 'Main Hall'.
 
 ## Guide-Robot
-    - Available Skill List : [{"skill" : "TakePicture"}, {"skill" : "MoveTo", "location" : ""}, {"skill" : "VoiceOutput", "messages" : ""}, {"skill" : "SendPicture", "address" : ""}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
-    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
+    - Available Skill List : [{"skill" : "TakePicture"}, {"skill" : "MoveTo", "location" : ""}, {"skill" : "VoiceOutput", "messages" : ""}, {"skill" : "SendPicture", "address" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+    - Movable place List : ['Main Entrance', 'Lobby', 'Information Desk', 'Conference Room', 'Exhibition Hall', 'Auditorium', 'Waiting Area', 'Library', 'Laboratory', 'Lecture Hall', 'Restroom', 'Cafeteria', 'Office', 'Break Room', 'Server Room', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
     - Main task :
         - Guide Process : First, move to the location entered by the user, and when robot arrive at the location, a voice output says, “You have arrived at (current location name)”, and then robot moves to home.
         - Filming Process : This process does not require movement. First, robot outputs a voice saying, “I will take a picture in 5 seconds,” then take a picture and send the picture to the phone number entered by the user, and then outputs a voice saying, “Transmission is complete.”
-        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator. Then, prepare for calling the elevator, and call the elevator according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator between floors.
+        - Elevator usage Process : If robot's next location is on a different floor, robot must use the elevator. To use the elevator, move to the front of the elevator on your current floor. Then, call the elevator by sending the current floor and 'Up' or 'Down' information according to the direction of movement between floors. When the call is complete, check inside the elevator to see if it is possible to board the elevator. And move robot to inside the elevator, and move elevator to the desired floor.
     - Extra Description
-        - Starting location is fixed to '8100'.
+        - 'Main Entrance', 'Lobby', 'Information Desk', 'Waiting Area', 'Restroom', and 'Cafeteria' are on the 1st floor, 'Conference Room', 'Exhibition Hall', 'Auditorium', 'Break Room', and 'Lecture Hall' are on the 2nd floor, and 'Library', 'Laboratory', 'Office', and 'Server Room' are on the 3rd floor.
+        - Starting location is fixed to 'Information Desk'.
 
 ## Surveillance-Robot
     - Available Skill List: [{"skill" : "StartSurveillance"}, {"skill" : "Patrol", "location" : ""}, {"skill" : "DetectThreat"}, {"skill" : "AlertSecurity"}, {"skill" : "ResetSystem"}, {"skill" : "ReturnStartLocation"}]
-    - Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111']
+    - Movable place List : ['Main Entrance', 'Server Room', 'Control Room', 'Storage Room', 'Office', 'Boiler Room']
     - Main task :
         - Surveillance Process: First, start the surveillance system and patrol a designated location. And detect any threats, and then alert security. After completing the surveillance, returns to the start location. And finally reset the system to its initial state.
     - Extra Description:
-        - Starting location is fixed to '8100'.
+        - Starting location is fixed to 'Main Entrance'.

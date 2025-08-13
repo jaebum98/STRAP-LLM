@@ -1,0 +1,40 @@
+
+input = I want to take a picture, can you take a picture and send it to 010-1234-5678?
+1step output = ##### DECOMPOSED COMMAND #####
+1. Take a picture.
+2. Send the picture to 010-1234-5678.
+
+##### ALLOCATED TASK #####
+- Guide-Robot: Take a picture and send it to 010-1234-5678.
+
+##### TASK EXECUTION PLAN #####
+# ['Take a picture and send it to 010-1234-5678'] #
+- Select robot name: Guide-Robot
+- Available Skill List: [{"skill" : "TakePicture"}, {"skill" : "MoveTo", "location" : ""}, {"skill" : "VoiceOutput", "messages" : ""}, {"skill" : "SendPicture", "address" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Movable place List: ['Main Entrance', 'Lobby', 'Information Desk', 'Conference Room', 'Exhibition Hall', 'Auditorium', 'Waiting Area', 'Library', 'Laboratory', 'Lecture Hall', 'Restroom', 'Cafeteria', 'Office', 'Break Room', 'Server Room', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
+- Start location: 'Information Desk' (1st Floor)
+- Return location: 'Information Desk' (1st Floor)
+- Usable Process list: [Filming]
+- Extra Description:
+    - 'Main Entrance', 'Lobby', 'Information Desk', 'Waiting Area', 'Restroom', and 'Cafeteria' are on the 1st floor, 'Conference Room', 'Exhibition Hall', 'Auditorium', 'Break Room', and 'Lecture Hall' are on the 2nd floor, and 'Library', 'Laboratory', 'Office', and 'Server Room' are on the 3rd floor.
+    - Starting location is fixed to 'Information Desk'.
+
+1. Start at 'Information Desk' (1st Floor)
+    # Start Filming Process
+        - Voice output: "I will take a picture in 5 seconds."
+        - Take a picture
+        - Send the picture to the address '010-1234-5678'
+        - Voice output: "Transmission is complete."
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Guide-Robot"},
+        {"skill":"VoiceOutput","messages":"I will take a picture in 5 seconds."},
+        {"skill":"TakePicture"},
+        {"skill":"SendPicture","address":"010-1234-5678"},
+        {"skill":"VoiceOutput","messages":"Transmission is complete."}
+    ]
+}
+runtime = 0.00455818999999999
+total_token = 9066

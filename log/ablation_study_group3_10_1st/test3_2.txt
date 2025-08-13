@@ -1,0 +1,15 @@
+
+input = Deliver TV to Office.
+1step output = ##### DECOMPOSED COMMAND #####
+1. Deliver TV to Office.
+
+##### ALLOCATED TASK #####
+- No robot can perform the task as there is no robot with the capability to deliver a TV.
+
+##### TASK EXECUTION PLAN #####
+- No task execution plan can be created as there is no robot available to perform the task of delivering a TV.
+2step output = {
+    "Action json Sequence": []
+}
+runtime = 0.0034705500000000167
+total_token = 8090

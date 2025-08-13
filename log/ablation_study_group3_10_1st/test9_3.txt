@@ -1,0 +1,45 @@
+
+input = Place the laptop on bed.
+1step output = ##### DECOMPOSED COMMAND #####
+1. Place the laptop on bed.
+
+##### ALLOCATED TASK #####
+- Home-Service-Robot-2 : Place the laptop on bed.
+
+##### TASK EXECUTION PLAN #####
+# ['Place the laptop on bed.'] #
+- Select robot name : Home-Service-Robot-2
+- Available Skill List: [{"skill" : "GoTo", "object" : ""}, {"skill" : "Pickup", "object" : ""}, {"skill" : "Open", "object" : ""}, {"skill" : "Close", "object" : ""}, {"skill" : "Wash", "object" : ""}, {"skill" : "Put", "object" : ""}, {"skill" : "Switchon", "object" : ""}, {"skill" : "Switchoff", "object" : ""}, {"skill" : "ReturnHome"}]
+- Usable Object List : ['Apple','Book','Bottle','Bowl','Bread','ButterKnife','Cabinet','CoffeeMachine','CounterTop','CreditCard','Cup','DishSponge','Drawer','Egg','Faucet','Floor','Fork','Fridge','GarbageCan','HousePlant','Kettle','Knife','Lettuce','LightSwitch','Microwave','Mug','Pan','PaperTowelRoll','PepperShaker','Plate','Pot','Potato','SaltShaker','Shelf','Sink','SoapBottle','Spatula','Spoon','Statue','Stool','StoveBurner','StoveKnob','Toaster','Tomato','Vase','Window','WineBottle','bed','laptop','floorlamp']
+- Start location : Home
+- Return location : Home
+- Task : Place the laptop on bed.
+
+1. Go to the object 'laptop'
+    - Use skill: GoTo, object: 'laptop'
+
+2. Pick up the 'laptop'
+    - Use skill: Pickup, object: 'laptop'
+
+3. Go to the object 'bed'
+    - Use skill: GoTo, object: 'bed'
+
+4. Put the 'laptop' on the 'bed'
+    - Use skill: Put, object: 'laptop'
+
+5. Return Home
+    - Use skill: ReturnHome
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Home-Service-Robot-2"},
+        {"skill":"GoTo","object":"laptop"}, 
+        {"skill":"Pickup","object":"laptop"}, 
+        {"skill":"GoTo","object":"bed"}, 
+        {"skill":"Put","object":"laptop"}, 
+        {"skill":"ReturnHome"}
+    ]
+}
+runtime = 0.003212667999999974
+total_token = 8966

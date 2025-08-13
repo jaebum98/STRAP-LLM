@@ -1,0 +1,61 @@
+
+input = Play with the puppy and check its health
+1step output = ##### Decomposed Command #####
+1. Put an Apple in the Fridge. (Process Required: Pick or Put Process, Open or Close Process)
+2. Switch off the Light. (Process Required: Switch Process)
+
+##### Allocated Task #####
+- robot1 : Put an Apple in the Fridge.
+- robot5 : Switch off the Light.
+
+##### Task Execution Plan #####
+# ['Put an Apple in the Fridge'] #
+- Select robot name : robot1
+- Available Skill List : [GoToObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+- Usable object List : ['Apple', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+- Usable Process list : [Pick or Put Process, Slicing Process, Throwing Process, Break Process]
+- Extra Description
+    - Execute the user's command by combining only the main process above.
+
+1. Put an Apple in the Fridge (can use object)
+    - Go to the Apple.
+    - Pick up the Apple.
+    - Go to the Fridge.
+    - Open the Fridge.
+    - Place the Apple inside the Fridge.
+    - Close the Fridge.
+
+- finish task -
+
+# ['Switch off the Light'] #
+- Select robot name : robot5
+- Available Skill List : [GoToObject("object_name"), BreakObject("object_name"), SliceObject("object_name"), SwitchOn("object_name"), SwitchOff("object_name"), PickupObject("object_name"), PutObject("object_name", "object_name"), DropHandObject("object_name"), ThrowObject("object_name", "object_name"), PushObject("object_name"), PullObject("object_name")]
+- Usable object List : ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'CoffeeMachine', 'CounterTop', 'CreditCard', 'Cup', 'DishSponge', 'Drawer', 'Egg', 'Faucet', 'Floor', 'Fork', 'Fridge', 'GarbageCan', 'HousePlant', 'Kettle', 'Knife', 'Lettuce', 'LightSwitch', 'Microwave', 'Mug', 'Pan', 'PaperTowelRoll', 'PepperShaker', 'Plate', 'Pot', 'Potato', 'SaltShaker', 'Shelf', 'ShelvingUnit', 'Sink', 'SinkBasin', 'SoapBottle', 'Spatula', 'Spoon', 'Statue', 'Stool', 'StoveBurner', 'StoveKnob', 'Toaster', 'Tomato', 'Vase', 'Window', 'WineBottle', 'Diningtable']
+- Usable Process list : [Switch Process, Pick or Put Process, Slicing Process, Throwing Process, Break Process]
+- Extra Description
+    - Execute the user's command by combining only the main process above.
+
+1. Switch off the Light (can use object)
+    - Go to the LightSwitch.
+    - Switch off the LightSwitch.
+
+- finish task -
+2step output = ```python
+def put_apple_in_fridge(robot_name):
+    GoToObject('Apple')
+    PickupObject('Apple')
+    GoToObject('Fridge')
+    OpenObject('Fridge')
+    PutObject('Apple', 'Fridge')
+    CloseObject('Fridge')
+
+def switch_off_light(robot_name):
+    GoToObject('LightSwitch')
+    SwitchOff('LightSwitch')
+
+# Task allocation
+put_apple_in_fridge(robot1)
+switch_off_light(robot5)
+```
+runtime = 8.487277030944824
+total_token = 11003

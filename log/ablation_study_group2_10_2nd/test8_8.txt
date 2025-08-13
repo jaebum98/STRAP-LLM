@@ -1,0 +1,17 @@
+
+input = Can you patrol to Restricted Area?
+1step output = ##### DECOMPOSED COMMAND #####
+1. Patrol to Restricted Area.
+
+##### ALLOCATED TASK #####
+- No robot can perform the task as there is no robot with the capability to patrol to a location named "Restricted Area."
+
+##### TASK EXECUTION PLAN #####
+- No task execution plan can be created as there is no robot available to perform the task of patrolling to "Restricted Area."
+
+- finish task -
+2step output = {
+    "Action json Sequence": []
+}
+runtime = 0.0070058960000000114
+total_token = 6897

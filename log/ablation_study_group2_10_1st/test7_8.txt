@@ -1,0 +1,15 @@
+
+input = Can you guide me to Classroom?
+1step output = ##### DECOMPOSED COMMAND #####
+1. Guide to Classroom.
+
+##### ALLOCATED TASK #####
+- No robot can be allocated for this task as there is no robot with "Classroom" in its movable place list.
+
+##### TASK EXECUTION PLAN #####
+- No task execution plan can be created as there is no robot capable of performing the task with the given location.
+2step output = {
+    "Action json Sequence": []
+}
+runtime = 0.007731977000000001
+total_token = 6881

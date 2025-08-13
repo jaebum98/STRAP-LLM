@@ -1,0 +1,66 @@
+
+input = Deliver TV to Office.
+1step output = ##### DECOMPOSED COMMAND #####
+1. Deliver TV to Office.
+
+##### ALLOCATED TASK #####
+- Delivery-Robot-3 : Deliver TV to Office.
+
+##### TASK EXECUTION PLAN #####
+# ['Deliver TV to Office.'] #
+- Select robot name : Delivery-Robot-3
+- Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect"}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Usable item List : ['Icecream','Apple','Book','LunchBox','Bottle','Box','Water','Medicine','Bread','Cup','Egg','Mug','Potato','Tomato']
+- Movable place List : ['Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom1', 'Restroom2', 'Restroom3', 'Toilet1', 'Toilet2', 'Toilet3', 'Office', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
+- Start location : 'Main Hall' (1st Floor)
+- Return location : 'Main Hall' (1st Floor)
+- Visit location list : ['Office'(3rd Floor)]
+- Usable Process list : [Elevator usage, Delivery]
+- Extra Description
+    - 'Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Restroom1', and 'Toilet1' are on the 1st floor, 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom2', and 'Toilet2' are on the 2nd floor, and 'Office', 'Restroom3', and 'Toilet3' are on the 3rd floor.
+	- Starting location is 'Main Hall'.
+
+1. Start 'Main Hall' (1st Floor)
+    # next location is 'Office', so there is need Elevator usage process as it is on the different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+2. SwitchFloor from 1st floor to 3rd floor
+    # Start Elevator usage Process
+        - Go to location '1floorev_front'
+        - call the elevator by sending the floor '1' and 'Up' for 1st to 3rd floor.
+        - check inside the elevator
+        - Go to location '1floorev_in'
+        - move elevator to floor '3'
+
+3. Location 'Office'
+    # Start Delivery Process
+        - Go to location 'Office'
+        - Detect the location
+        - Move the robot arm to deliver 'TV'
+        - Fold the robot arm
+    # next location is 'Main Hall', so there is need Elevator usage process as it is on the different floor.
+    # It can be used because there is an Elevator usage process in the process list.
+
+4. SwitchFloor from 3rd floor to 1st floor
+    # Start Elevator usage Process
+        - Go to location '3floorev_front'
+        - call the elevator by sending the floor '3' and 'Down' for 3rd to 1st floor.
+        - check inside the elevator
+        - Go to location '3floorev_in'
+        - move elevator to floor '1'
+
+5. Return to 'Main Hall'
+   - Go to location 'Main Hall'
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Delivery-Robot-3"},
+        {"skill":"MoveTo","location":"1floorev_front"}, {"skill":"CallElevator","floor":"1","direction":"Up"}, {"skill":"CheckinsideElevator"}, {"skill":"MoveTo","location":"1floorev_in"}, {"skill":"MoveElevator","floor":"3"},
+        {"skill":"MoveTo","location":"Office"}, {"skill":"Detect"}, {"skill":"MoveRobotArm","item":"TV"}, {"skill":"FoldRobotArm"},
+        {"skill":"MoveTo","location":"3floorev_front"}, {"skill":"CallElevator","floor":"3","direction":"Down"}, {"skill":"CheckinsideElevator"}, {"skill":"MoveTo","location":"3floorev_in"}, {"skill":"MoveElevator","floor":"1"},
+        {"skill":"MoveTo","location":"Main Hall"}
+    ]
+}
+runtime = 0.004072385999999983
+total_token = 6909

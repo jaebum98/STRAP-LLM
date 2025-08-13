@@ -1,0 +1,46 @@
+
+input = Can you patrol to Restricted Area?
+1step output = ##### DECOMPOSED COMMAND #####
+1. Patrol to Restricted Area.
+
+##### ALLOCATED TASK #####
+- Surveillance-Robot : Patrol to Restricted Area.
+
+##### TASK EXECUTION PLAN #####
+# ['Patrol to Restricted Area'] #
+- Select robot name : Surveillance-Robot
+- Available Skill List: [{"skill" : "StartSurveillance"}, {"skill" : "Patrol", "location" : ""}, {"skill" : "DetectThreat"}, {"skill" : "AlertSecurity"}, {"skill" : "ResetSystem"}, {"skill" : "ReturnStartLocation"}]
+- Movable place List : ['Main Entrance', 'Server Room', 'Control Room', 'Storage Room', 'Office', 'Boiler Room']
+- Start location : 'Main Entrance'
+- Return location : 'Main Entrance'
+- Visit location list : ['Restricted Area']
+- Usable Process list : [Surveillance]
+- Extra Description:
+    - Starting location is fixed to 'Main Entrance'.
+
+1. Start 'Main Entrance'
+    # Start Surveillance Process
+        - Start the surveillance system
+        - Patrol to 'Restricted Area'
+        - Detect any threats
+        - Alert security
+    # next location is 'Main Entrance', so return to start location.
+
+2. Return to 'Main Entrance'
+   - Return to start location
+   - Reset the system to its initial state
+
+- finish task -
+2step output = {
+    "Action json Sequence": [
+        {"robot":"Surveillance-Robot"},
+        {"skill":"StartSurveillance"},
+        {"skill":"Patrol","location":"Restricted Area"},
+        {"skill":"DetectThreat"},
+        {"skill":"AlertSecurity"},
+        {"skill":"ReturnStartLocation"},
+        {"skill":"ResetSystem"}
+    ]
+}
+runtime = 0.010454905999999986
+total_token = 7353

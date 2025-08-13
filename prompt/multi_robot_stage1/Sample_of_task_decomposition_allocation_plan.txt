@@ -1,99 +1,100 @@
-# Example Scenario 1 #
-# user input : "Deliver tray2 to 8222, tray1 to 8111 in that order, and deliver Apple to 8101."
+# EXAMPLE SCENARIO #
+# user command : "Bring tray2 to Laboratory1, tray1 to Meeting Room2 in that order, and Bring Apple to Meeting Room1."
 
-##### Decomposed Command #####
-1. Deliver tray2 to 8222.
-2. Deliver tray1 to 8111.
-3. Deliver Apple to 8101.
+##### DECOMPOSED COMMAND #####
+1. Bring tray2 to Laboratory1.
+2. Bring tray1 to Meeting Room2.
+3. Bring Apple to Meeting Room1.
 
-##### Allocated Task #####
-- Delivery-Robot-1 : Deliver tray2 to 8222.
-- Delivery-Robot-1 : Deliver tray1 to 8111.
-- Delivery-Robot-3 : Deliver Apple to 8101.
+##### ALLOCATED TASK #####
+- Delivery-Robot-1 : Bring tray2 to Laboratory1.
+- Delivery-Robot-1 : Bring tray1 to Meeting Room2.
+- Delivery-Robot-3 : Bring Apple to Meeting Room1.
 
-##### Task Execution Plan #####
-# ['Deliver tray2 to 8222', 'Deliver tray1 to 8111'] #
+##### TASK EXECUTION PLAN #####
+# ['Bring tray2 to Laboratory1', 'Bring tray1 to Meeting Room2'] #
 - Select robot name : Delivery-Robot-1
-- Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect", "direction" : ""}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
+- Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect", "direction" : ""}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
 - Usable item List : ['tray1','tray2','tray3','tray4','tray5','tray6','tray7','tray8','tray9','tray10','tray11','tray12','tray13','tray14','tray15','tray16']
-- Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
-- Start location : '8100' (1st Floor)
-- Return location : '8100' (1st Floor)
-- Visit location list : ['8222'(2nd Floor), '8111'(1st Floor)]
+- Movable place List : ['Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom1', 'Restroom2', 'Restroom3', 'Toilet1', 'Toilet2', 'Toilet3', 'Office', '1floorev_front', '1floorev_in', '2floorev_front', '2floorev_in', '3floorev_front', '3floorev_in']
+- Start location : 'Main Hall' (1st Floor)
+- Return location : 'Main Hall' (1st Floor)
+- Visit location list : ['Laboratory1'(2nd Floor), 'Meeting Room2'(1st Floor)]
 - Usable Process list : [Elevator usage, Delivery]
 - Extra Description
+    - 'Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Restroom1', and 'Toilet1' are on the 1st floor, 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom2', and 'Toilet2' are on the 2nd floor, and 'Office', 'Restroom3', and 'Toilet3' are on the 3rd floor.
     - For tray 1 to tray 8 to be delivered, you need to detect whether the 'left' direction can be delivered, and from tray 9 to tray 16, you need to detect whether the 'right' direction can be delivered.
-    - Starting location is '8100'.
+	- Starting location is 'Main Hall'.
 
-1. Start '8100' (1st Floor)
-    # next location is '8222', so there is need Elevator usage process as it is on the different floor.
+
+1. Start 'Main Hall' (1st Floor)
+    # next location is 'Laboratory1', so there is need Elevator usage process as it is on the different floor.
     # It can be used because there is an Elevator usage process in the process list.
 
 2. SwitchFloor from 1st floor to 2nd floor
-    # Start Elevator usage Process(can use)
+    # Start Elevator usage Process
         - Go to location '1floorev_front'
-        - Prepare for using the elevator
-        - call the elevator according to the direction of movement between floors
+        - call the elevator by sending the floor '1' and 'Up' for 1st to 2nd floor.
         - check inside the elevator
         - Go to location '1floorev_in'
-        - move between elevator floors
+        - move elevator to floor '2'
 
-3. Location '8222'
-    # Start Delivery Process(can use)
-        - Go to location '8222'
+3. Location 'Laboratory1'
+    # Start Delivery Process
+        - Go to location 'Laboratory1'
         - Detect left direction of the location
         - Move the robot arm to deliver 'tray2'
         - Fold the robot arm
-    # next location is '8111', so there is need Elevator usage process as it is on the different floor.
+    # next location is 'Meeting Room2', so there is need Elevator usage process as it is on the different floor.
     # It can be used because there is an Elevator usage process in the process list.
 
 4. SwitchFloor from 2nd floor to 1st floor
-    # Start Elevator usage Process(can use)
+    # Start Elevator usage Process
         - Go to location '2floorev_front'
-        - Prepare for using the elevator
-        - call the elevator according to the direction of movement between floors
+        - call the elevator by sending the floor '2' and 'Down' for 1st to 2nd floor.
         - check inside the elevator
         - Go to location '2floorev_in'
-        - move between elevator floors
+        - move elevator to floor '1'
 
-3. Location '8111'
-    # Start Delivery Process(can use)
-        - Go to location '8111'
+5. Location 'Meeting Room2'
+    # Start Delivery Process
+        - Go to location 'Meeting Room2'
         - Detect left direction of the location
         - Move the robot arm to deliver 'tray1'
         - Fold the robot arm
-    # next location is '8100', so there is need Elevator usage process as it is on the different floor.
+    # next location is 'Main Hall', so there is need Elevator usage process as it is on the different floor.
     # It can be used because there is an Elevator usage process in the process list.
 
-5. Return to '8100'
-   - Go to location '8100'
+6. Return to 'Main Hall'
+   - Go to location 'Main Hall'
 
 - finish task -
 
-# ['Deliver Apple to 8101.'] #
+# ['Bring Apple to Meeting Room1.'] #
 - Select robot name : Delivery-Robot-3
 - Available Skill List : [{"skill" : "MoveTo", "location" : ""}, {"skill" : "Detect"}, {"skill" : "MoveRobotArm", "item" : ""}, {"skill" : "FoldRobotArm"}, {"skill" : "PreparetoCallElevator", "location" : ""}, {"skill" : "CallElevator", "floor" : "", "direction" : ""}, {"skill" : "CheckinsideElevator"}, {"skill" : "MoveElevator", "floor" : ""}]
 - Usable item List : ['Icecream','Apple','Book','LunchBox','Bottle','Box','Water','Medicine','Bread','Cup','Egg','Mug','Potato','Tomato']
-- Movable place List : ['8100', '8101', '8103', '8107', '8109', '8111', '8202', '8205', '8208', '8222', '8223', '8226', '8300', '8301', '8304', '8306', '8310', '8323', '8324', '8360']
-- Start location : '8100' (1st Floor)
-- Return location : '8100' (1st Floor)
-- Visit location list : ['8101'(1st Floor)]
+- Movable place List : ['Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom1', 'Restroom2', 'Restroom3', 'Toilet1', 'Toilet2', 'Toilet3', 'Office']
+- Start location : 'Main Hall' (1st Floor)
+- Return location : 'Main Hall' (1st Floor)
+- Visit location list : ['Meeting Room1'(1st Floor)]
 - Usable Process list : [Elevator usage, Delivery]
 - Extra Description
-    - Starting location is '8100'.
+    - 'Main Hall', 'Meeting Room1', 'Meeting Room2', 'Meeting Room3', 'Restroom1', and 'Toilet1' are on the 1st floor, 'Laboratory1', 'Laboratory2', 'Laboratory3', 'Restroom2', and 'Toilet2' are on the 2nd floor, and 'Office', 'Restroom3', and 'Toilet3' are on the 3rd floor.
+	- Starting location is 'Main Hall'.
 
-1. Start '8100' (1st Floor)
-    # next location is '8101', so there is no need Elevator usage process as it is on the same floor.
+1. Start 'Main Hall' (1st Floor)
+    # next location is 'Meeting Room1', so there is no need Elevator usage process as it is on the same floor.
 
-2. Location '8101'
-    # Start Delivery Process(can use)
-        - Go to location '8101'
+2. Location 'Meeting Room1'
+    # Start Delivery Process
+        - Go to location 'Meeting Room1'
         - Detect the location
         - Move the robot arm to deliver 'Apple'
         - Fold the robot arm
-    # next location is '8100', so there is no need Elevator usage process as it is on the same floor.
+    # next location is 'Main Hall', so there is no need Elevator usage process as it is on the same floor.
 
-3. Return to '8100'
-   - Go to location '8100'
+3. Return to 'Main Hall'
+   - Go to location 'Main Hall'
 
 - finish task -

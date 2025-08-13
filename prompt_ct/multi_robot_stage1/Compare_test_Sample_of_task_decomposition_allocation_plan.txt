@@ -1,5 +1,5 @@
 # Example Scenario 1 #
-# user input : "Put an Egg in the Fridge, and place a pot containing Apple slices into the Fridge."
+# user command : "Put an Egg in the Fridge, and place a pot containing Apple slices into the Fridge."
 
 ##### Decomposed Command #####
 1. Put an Egg in the Fridge. (Process Required: Pick or Put Process, Open or Close Process)
